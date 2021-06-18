@@ -1,42 +1,15 @@
 package com.cognizant.Utilities;
 
-import java.util.concurrent.TimeUnit;
-import com.cognizant.Utilities.NavigationCommands;
-
 import com.cognizant.configuration.Configuration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverSetup {
-    //This setups Firefox Driver.
-//    public static WebDriver setupFirefoxDriver()
-//    {
-//        // declaration and instantiation of objects/variables
-//        String baseUrl = "https://www.policybazaar.com/";
-//        System.setProperty("webdriver.gecko.driver","../../../../WebDriver/geckodriver.exe");
-//        WebDriver driver = new FirefoxDriver();
-//        driver.manage().window().maximize();
-//        NavigationCommands.gotoURL(driver, baseUrl);
-//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//        return driver;
-//    }
-//
-//    //This setups Firefox Driver.
-//    public static WebDriver setupChromeDriver()
-//    {
-//        // declaration and instantiation of objects/variables
-//        String baseUrl = "https://www.policybazaar.com/";
-//        System.setProperty("webdriver.chrome.driver","../../../../WebDriver/chromedriver.exe");
-//        WebDriver driver = new ChromeDriver();
-//        driver.manage().window().maximize();
-//        NavigationCommands.gotoURL(driver, baseUrl);
-//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//        return driver;
-//    }
 
     private static DriverSetup instance = null;
-    private static WebDriver driver;
+    private static WebDriver driver=null;
 
     private DriverSetup() { }
 
@@ -51,29 +24,31 @@ public class DriverSetup {
     public final void setDriver(String browser) {
         switch (browser) {
             case "firefox":
-                System.setProperty("webdriver.firefox.driver",
+                System.setProperty("webdriver.gecko.driver",
                         Configuration.getProperty("firefoxDriverPath"));
+                driver = new FirefoxDriver();
+                break;
             case "chrome":
                 System.setProperty("webdriver.chrome.driver",
                         Configuration.getProperty("chromeDriverPath"));
+                driver = new ChromeDriver();
+                break;
             case "edge":
                 System.setProperty("webdriver.edge.driver",
                         Configuration.getProperty("edgeDriverPath"));
-                driver = new FirefoxDriver();
-            default:
-                System.setProperty("webdriver.chrome.driver",
-                        Configuration.getProperty("edgeDriverPath"));
+                driver = new EdgeDriver();
+                break;
         }
     }
 
     // set driver instance forcefully to the driver parameter passed to the method
     public final void setDriver(WebDriver _driver) {
-        driver = _driver;
+        this.driver = _driver;
     }
 
     // returns the webdriver instance for the `browser` parameter
     public final WebDriver getDriver(String browser) {
-        setDriver(browser);
+        this.setDriver(browser);
         return driver;
     }
 
