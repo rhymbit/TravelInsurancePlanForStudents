@@ -2,6 +2,7 @@ package com.cognizant.CarInsurance;
 
 import com.cognizant.homepage.HomePagePO;
 import org.openqa.selenium.By;
+import com.cognizant.Utilities.Navigate;
 import org.openqa.selenium.WebDriver;
 
 public class CarInsurancePO {
@@ -13,7 +14,9 @@ public class CarInsurancePO {
     }
 
     public WebDriver clickonProceed(){
-        driver.findElement(ProceedWithoutCarNumber);
+
+        driver.findElement(ProceedWithoutCarNumber).click();
+
         return driver;
     }
 }

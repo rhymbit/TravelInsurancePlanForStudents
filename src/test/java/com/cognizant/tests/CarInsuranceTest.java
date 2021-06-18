@@ -1,17 +1,20 @@
 package com.cognizant.tests;
 
-import com.cognizant.Utilities.DriverSetup;
-import com.cognizant.Utilities.Navigate;
 import com.cognizant.homepage.HomePagePO;
 import com.cognizant.travelinsurance.TravelInsurancePO;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
+import com.cognizant.CarInsurance.CarInsurancePO;
+import com.cognizant.CarInsurance.CarInsurancePage2;
+import com.cognizant.Utilities.DriverSetup;
+import com.cognizant.Utilities.Navigate;
 import org.testng.Reporter;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
-public class TravelInsuranceTest {
-    private WebDriver driver = null;
-
+public class CarInsuranceTest {
+    public WebDriver driver;
     @BeforeTest
     @Parameters("browser")
     public void setup(String browser) {
@@ -39,15 +42,14 @@ public class TravelInsuranceTest {
         Navigate.closeDriver(driver);
     }
 
-
     @Test
-    public void testNavigateToPage() {
+    public void testCarInsuranceCase(){
         HomePagePO homepage = new HomePagePO(driver);
         homepage.openHomePage();
-        TravelInsurancePO travelInsurancePage = homepage.gotoTravelInsurance();
-        String pageTitle = Navigate.getTitle(driver);
-        Assert.assertEquals(pageTitle, "PolicyBazaar Travel Insurance");
+        Navigate.wait(driver,10);
+        CarInsurancePO carInsurancePage = homepage.gotoCarInsurance();
+        driver = carInsurancePage.clickonProceed();
+        CarInsurancePage2 carinsurancetest = new CarInsurancePage2(driver);
+        carinsurancetest.filldetails();
     }
-
-
 }

@@ -4,8 +4,16 @@
 <suite name="TestTravelInsurance" thread-count="3" parallel="tests">
     <test name="EdgeTest">
         <parameter name="browser" value="Edge"/>
-        <classes>
+       <!--- <classes>
             <class name="com.cognizant.tests.TravelInsuranceTest"/>
+        </classes>-->
+
+        <!--- <classes>
+            <class name="com.cognizant.tests.CarInsuranceTest"/>
+        </classes>-->
+
+        <classes>
+            <class name="com.cognizant.tests.HealthInsuranceTest"/>
         </classes>
     </test>
 <!--    <test name="ChromeTest">-->

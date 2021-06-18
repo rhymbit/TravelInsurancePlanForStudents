@@ -7,9 +7,11 @@ import com.cognizant.healthinsurance.HealthInsurancePO;
 import com.cognizant.travelinsurance.TravelInsurancePO;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class HomePagePO {
@@ -18,7 +20,7 @@ public class HomePagePO {
 
     private final By travelInsuranceBy = By.xpath("//div[13]//a[1]//div[1]//p[1]");
     private final By carInsuranceBy = By.xpath("//div[@class='container prd-container']//div[4]//a[1]//div[1]//p[1]");
-    private final By healthInsuranceBy = By.xpath("//div[@class='container prd-container']//div[2]//a[1]//div[1]//p[1]");
+    private final By healthInsuranceMenu =  By.cssSelector("body > cclink > div.policywarp > div.ruby-menu-demo-header > div > ul > li.ruby-menu-mega > div > div > div:nth-child(2) > ul");
 
     public HomePagePO(WebDriver driver) {
         this.driver = driver;
@@ -41,8 +43,14 @@ public class HomePagePO {
         return new CarInsurancePO(driver);
     }
 
-    public HealthInsurancePO gotoHealthInsurance() {
-        Navigate.clickElement(driver.findElement(healthInsuranceBy));
-        return new HealthInsurancePO(driver);
+    public void fetchHealthInsuranceMenu() {
+
+       WebElement ListofMenus =  driver.findElement(healthInsuranceMenu);
+        List<WebElement> ListItem = ListofMenus.findElements(By.cssSelector("li a span"));
+        System.out.println("Menu Items are: ");
+        for (int i = 0; i < ListItem.size(); i++)
+        {
+            System.out.println(ListItem.get(i).getAttribute("innerHTML"));
+        }
     }
 }
