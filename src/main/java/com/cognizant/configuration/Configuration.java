@@ -28,14 +28,14 @@ public class Configuration {
         }
         try (OutputStream out = Files.newOutputStream(configFilePath)) {
             String absPath = Path.of("").toAbsolutePath().toString();
-            prop.setProperty("baseUrl", "http://demo.automationtesting.in/Alerts.html");
+            prop.setProperty("baseUrl", "https://www.policybazaar.com/");
             prop.setProperty("edgeDriverPath", webDPath + "\\edgedriver_win64\\msedgedriver.exe");
             prop.setProperty("chromeDriverPath", webDPath + "\\chromedriver_win32\\chromedriver.exe");
             prop.setProperty("geckoDriverPath", webDPath + "\\geckodriver-v0.29.1-win64\\geckodriver.exe");
             prop.setProperty("firefoxDriverPath", webDPath + "\\geckodriver-v0.29.1-win64\\geckodriver.exe");
-            prop.setProperty("screenshotPath",  absPath + "\\test-screenshots\\alerts");
-            prop.setProperty("usernameFilePath", absPath + "\\src\\main\\resources\\username.txt");
-            prop.store(out, "Handel Alert, Prompt and Confirm Box Configurations");
+            prop.setProperty("screenshotPath",  absPath + "\\test-screenshots");
+            prop.setProperty("usernameFilePath", absPath + "\\src\\main\\resources\\userDetails.xslx");
+            prop.store(out, "Student Insurance Registration");
         } catch (IOException exp) {
             exp.printStackTrace();
         }
