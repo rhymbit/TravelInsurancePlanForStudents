@@ -4,6 +4,9 @@ import com.cognizant.Utilities.DriverSetup;
 import com.cognizant.travelinsurance.TravelInsurance;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class HomePage {
     public WebDriver driver = DriverSetup.setupChromeDriver();
@@ -16,15 +19,16 @@ public class HomePage {
         return driver;
     }
 
-    public WebDriver gotoCarInsurance(){
+    public WebDriver gotoCarInsurance() {
         driver.findElement(CarInsuranceAnchor).click();
         return driver;
     }
 
-    public void fetchHealthInsuranceMenu(){
+    public void fetchHealthInsuranceMenu() {
         List<WebElement> ListofMenus = driver.findElements(HealthInsuranceMenu);
         System.out.println("Menu Items are: ");
-        for( WebElement i: ListofMenus){
+        for (WebElement i : ListofMenus) {
             System.out.println(i.getText());
+        }
     }
 }

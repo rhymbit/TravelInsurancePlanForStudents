@@ -30,7 +30,7 @@ public class DriverSetup {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         NavigationCommands.gotoURL(driver, baseUrl);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS));
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return driver;
     }
 }
