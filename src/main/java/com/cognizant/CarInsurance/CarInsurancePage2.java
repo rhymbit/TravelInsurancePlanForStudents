@@ -21,7 +21,7 @@ public class CarInsurancePage2 {
     private By submit = By.xpath("//*[@id=\"btnLeadDetails\"]");
 
     public CarInsurancePage2(){
-        CarInsurance page = new CarInsurance();
+        CarInsurancePO page = new CarInsurancePO();
         driver =  page.clickonProceed();
     }
 
