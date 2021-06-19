@@ -2,6 +2,7 @@ package com.cognizant.tests;
 
 import com.cognizant.Utilities.DriverSetup;
 import com.cognizant.Utilities.Navigate;
+import com.cognizant.configuration.Configuration;
 import com.cognizant.homepage.HomePagePO;
 import com.cognizant.travelinsurance.TravelInsurancePO;
 import org.openqa.selenium.By;
@@ -11,12 +12,18 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.*;
 
+import java.nio.file.Path;
+
 public class TravelInsuranceTest {
     private WebDriver driver = null;
+    private String screenShotPath = Path.of(Configuration.getProperty("screenshotPath"),
+            "travelInsurance", "lowestThreeInsurance.png")
+            .toString();
 
     @BeforeTest
     @Parameters("browser")
     public void setup(String browser) {
+        Configuration.createConfigurations();
         DriverSetup instance = DriverSetup.getInstance();
         if (browser.equalsIgnoreCase("edge")){
             driver = instance.getDriver("edge");
@@ -67,7 +74,7 @@ public class TravelInsuranceTest {
         // click on add another traveler
         travelInsurancePage.addAnotherTraveler();
         // Select age '22' for second traveler
-        travelInsurancePage.selectAge("21", travelInsurancePage.ageSelector1By); // read from apache poi excel
+        travelInsurancePage.selectAge("22", travelInsurancePage.ageSelector1By); // read from apache poi excel
         // click the 'next' button
         travelInsurancePage.clickNext();
         // click on dates from calendar pop-up
@@ -78,6 +85,11 @@ public class TravelInsuranceTest {
         travelInsurancePage.enterMobileNumber("9876543210"); // read from apache poi excel
         // click on 'View Plans'
         travelInsurancePage.clickViewPlans();
-
+        // select price low-to-high filter
+        travelInsurancePage.selectPriceOption("Price: Low to High");
+        // scroll a bit down on the page
+        Navigate.scrollWindow(driver, 250);
+        // take screenshot of first 3 lowest price
+        Navigate.screenshot(driver, screenShotPath);
     }
 }
