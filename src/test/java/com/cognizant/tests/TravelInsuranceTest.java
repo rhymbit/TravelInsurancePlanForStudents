@@ -13,50 +13,12 @@ import org.testng.Reporter;
 import org.testng.annotations.*;
 
 import java.nio.file.Path;
+import java.util.concurrent.TimeUnit;
 
-public class TravelInsuranceTest {
-    private WebDriver driver = null;
+public class TravelInsuranceTest extends TestBase{
     private String screenShotPath = Path.of(Configuration.getProperty("screenshotPath"),
             "travelInsurance", "lowestThreeInsurance.png")
             .toString();
-
-    @BeforeTest
-    @Parameters("browser")
-    public void setup(String browser) {
-        Configuration.createConfigurations();
-        DriverSetup instance = DriverSetup.getInstance();
-        if (browser.equalsIgnoreCase("edge")){
-            driver = instance.getDriver("edge");
-        }
-        else if (browser.equalsIgnoreCase("chrome")) {
-            driver = instance.getDriver("chrome");
-        }
-        else if (browser.equalsIgnoreCase("firefox")) {
-            driver = instance.getDriver("firefox");
-        }
-        else {
-            Reporter.log("Install one of the following browsers to run this project:-");
-            Reporter.log("Microsft Edge");
-            Reporter.log("Google Chrome");
-            Reporter.log("Firefox");
-            System.exit(1);
-        }
-    }
-
-    @AfterTest
-    public void cleanup() {
-        Navigate.closeDriver(driver);
-    }
-
-
-//    @Test(alwaysRun = false)
-//    public void testNavigateToPage() {
-//        HomePagePO homepage = new HomePagePO(driver);
-//        homepage.openHomePage();
-//        TravelInsurancePO travelInsurancePage = homepage.gotoTravelInsurance();
-//        String pageTitle = Navigate.getTitle(driver);
-//        Assert.assertEquals(pageTitle, "PolicyBazaar Travel Insurance");
-//    }
 
     @Test
     public void testSearchCountry() {
@@ -92,4 +54,40 @@ public class TravelInsuranceTest {
         // take screenshot of first 3 lowest price
         Navigate.screenshot(driver, screenShotPath);
     }
+
+    @Override
+    @BeforeClass
+    @Parameters("browser")
+    protected void testClassSetup(String browser) {
+        DriverSetup instance = DriverSetup.getInstance();
+        if (browser.equalsIgnoreCase("edge")){
+            driver = instance.getDriver("edge");
+        }
+        else if (browser.equalsIgnoreCase("chrome")) {
+            driver = instance.getDriver("chrome");
+        }
+        else if (browser.equalsIgnoreCase("firefox")) {
+            driver = instance.getDriver("firefox");
+        }
+        else {
+            Reporter.log("Install one of the following browsers to run this project:-");
+            Reporter.log("Microsoft Edge");
+            Reporter.log("Google Chrome");
+            Reporter.log("Firefox");
+            System.exit(1);
+        }
+    }
+
+    @Override
+    @AfterClass
+    protected void testClassTearDown() {
+        Navigate.closeDriver(driver);
+    }
+
+    @Override
+    protected void testMethodsSetup() { }
+
+    @Override
+    @AfterTest
+    protected void testMethodsTearDown() { }
 }

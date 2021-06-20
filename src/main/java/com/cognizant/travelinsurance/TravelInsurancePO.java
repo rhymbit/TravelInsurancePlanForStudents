@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 public class TravelInsurancePO {
     public WebDriver driver = null;
@@ -43,11 +44,14 @@ public class TravelInsurancePO {
     public void searchCountry(String country) {
         Navigate.waitForElement(driver,searchCountryBy);
         Navigate.sendKeys(driver.findElement(searchCountryBy), country);
-        Navigate.waitForElement(driver, countryListingBy);
+//        Navigate.waitForElementFluent(driver, countryListingBy);
+        Navigate.clickElement(driver.findElement(countryListingBy));
         Navigate.actionPressEnter(driver);
+
     }
 
     public void selectAge(String age, By locator) {
+        Navigate.clickElement(driver.findElement(By.xpath("//label[@placeholder='Traveller']")));
         Navigate.waitForElement(driver, locator);
         Navigate.selectByValue(driver.findElement(locator), age);
     }

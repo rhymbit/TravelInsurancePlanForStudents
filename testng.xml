@@ -3,7 +3,7 @@
 
 <suite name="TestTravelInsurance" thread-count="3" parallel="tests">
     <test name="EdgeTest">
-        <parameter name="browser" value="Edge"/>
+        <parameter name="browser" value="Edge"></parameter>
         <classes>
             <class name="com.cognizant.tests.TravelInsuranceTest"/>
         </classes>
@@ -20,4 +20,7 @@
 <!--            <class name="com.cognizant.tests.TravelInsuranceTest"/>-->
 <!--        </classes>-->
 <!--    </test>-->
+    <listeners>
+        <listener class-name="com.cognizant.tests.listeners.TestListener" />
+    </listeners>
 </suite>
