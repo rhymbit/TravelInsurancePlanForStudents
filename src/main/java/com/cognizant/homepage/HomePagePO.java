@@ -10,12 +10,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.ObjectInputFilter;
 import java.util.concurrent.TimeUnit;
 
 public class HomePagePO {
     // web driver instance
     public WebDriver driver = null;
 
+    private String baseUrl = null;
     private final By travelInsuranceBy = By.xpath("//div[13]//a[1]//div[1]//p[1]");
     private final By carInsuranceBy = By.xpath("//div[@class='container prd-container']//div[4]//a[1]//div[1]//p[1]");
     private final By healthInsuranceBy = By.xpath("//div[@class='container prd-container']//div[2]//a[1]//div[1]//p[1]");
@@ -27,7 +29,8 @@ public class HomePagePO {
     // method to locate baseUrl in the browser.
     // this method should be called very first at the start
     public void openHomePage() {
-        Navigate.gotoUrl(driver, Configuration.getProperty("baseUrl"));
+        baseUrl = Configuration.getProperty("baseUrl");
+        Navigate.gotoUrl(driver, baseUrl);
         Navigate.wait(driver, 0);
     }
 
