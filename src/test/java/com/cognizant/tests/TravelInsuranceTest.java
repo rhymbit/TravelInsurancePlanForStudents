@@ -20,7 +20,7 @@ public class TravelInsuranceTest extends TestBase{
             "travelInsurance", "lowestThreeInsurance.png")
             .toString();
 
-    @Test
+    @Test(enabled = false)
     public void testSearchCountry() {
         // get homepage instance
         HomePagePO homePage = new HomePagePO(driver);
@@ -30,13 +30,13 @@ public class TravelInsuranceTest extends TestBase{
         TravelInsurancePO travelInsurancePage = homePage.gotoTravelInsurance();
         Navigate.wait(driver, 0);
         // Enter 'France' in country box
-        travelInsurancePage.searchCountry("France"); // read from apache poi excel
+        travelInsurancePage.searchCountry(travelData.get("country")); // read from apache poi excel
         // Select age '21' for first traveler
-        travelInsurancePage.selectAge("21", travelInsurancePage.ageSelector0By); // read from apache poi excel
+        travelInsurancePage.selectAge(travelData.get("age1"), travelInsurancePage.ageSelector0By); // read from apache poi excel
         // click on add another traveler
         travelInsurancePage.addAnotherTraveler();
         // Select age '22' for second traveler
-        travelInsurancePage.selectAge("22", travelInsurancePage.ageSelector1By); // read from apache poi excel
+        travelInsurancePage.selectAge(travelData.get("age2"), travelInsurancePage.ageSelector1By); // read from apache poi excel
         // click the 'next' button
         travelInsurancePage.clickNext();
         // click on dates from calendar pop-up
@@ -44,7 +44,7 @@ public class TravelInsuranceTest extends TestBase{
         // click on the proceed button
         travelInsurancePage.clickProceedButton();
         // enter mobile number
-        travelInsurancePage.enterMobileNumber("9876543210"); // read from apache poi excel
+        travelInsurancePage.enterMobileNumber(travelData.get("phoneNumber")); // read from apache poi excel
         // click on 'View Plans'
         travelInsurancePage.clickViewPlans();
         // select price low-to-high filter

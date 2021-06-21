@@ -1,5 +1,6 @@
 package com.cognizant.apachePOI;
 
+import com.cognizant.configuration.Configuration;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -8,24 +9,46 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 public class ReadExcel {
     //declaring class level variables and constructor to set filepath and sheetIndex
-    private String filePath;
+    private Path filePath;
+    private XSSFWorkbook workbook = null;
     private int sheetIndex;
-    public ReadExcel(String filePath, int sheetIndex){
-        this.filePath=filePath;
+
+    public ReadExcel(int sheetIndex){
+        this.filePath = Path.of(Configuration.getProperty("excelFilePath"));
         this.sheetIndex=sheetIndex;
+        readExcelFile();
+    }
+
+    private void readExcelFile() {
+        try (InputStream in = Files.newInputStream(filePath)) {
+            workbook = new XSSFWorkbook(in);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void closeWorkbook() {
+        try {
+            workbook.close();
+        } catch (IOException exp) {
+            exp.printStackTrace();
+        }
     }
     //this method returns desired sheet based on sheet index
-    private XSSFSheet getSheet() throws IOException {
-        FileInputStream readFile= new FileInputStream(filePath);
-        XSSFWorkbook workbook=new XSSFWorkbook(readFile);
-        XSSFSheet sheet=workbook.getSheetAt(sheetIndex);
+    private XSSFSheet getSheet() {
+//        FileInputStream readFile= new FileInputStream(filePath);
+//        XSSFWorkbook workbook=new XSSFWorkbook(readFile);
+        XSSFSheet sheet = workbook.getSheetAt(sheetIndex);
         return sheet;
     }
     //this methods reads Excel data in map
-    public Map<String, Map<String, String>> getExcelAsMap() throws IOException {
+    public Map<String, Map<String, String>> getExcelAsMap() {
         XSSFSheet sheet= getSheet();
         //creating nested hashmap for fetching excel data
         Map<String, Map<String, String>> completeSheetData = new HashMap<String, Map<String, String>>();
@@ -42,7 +65,7 @@ public class ReadExcel {
         int rowCount=1;
         //System.out.println(rowCount);
         int columnCount = row.getLastCellNum();
-        System.out.println(columnCount);
+
         for (int i = 1; i <= rowCount; i++) {
             Map<String, String> singleRowData = new HashMap<String, String>();
             Row row1 = sheet.getRow(i);
@@ -55,6 +78,13 @@ public class ReadExcel {
         return completeSheetData;
     }
 
-
-
+    public Map<String,String> getTravelInsuranceData(int sheetIndex) {
+        this.sheetIndex = sheetIndex;
+        Map<String,String> map =  getExcelAsMap().get("1");
+        int age1 = (int)Double.parseDouble(map.get("age1"));
+        int age2 = (int)Double.parseDouble(map.get("age2"));
+        map.put("age1", String.valueOf(age1));
+        map.put("age2", String.valueOf(age2));
+        return map;
+    }
 }
