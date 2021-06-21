@@ -1,9 +1,0 @@
-com\cognizant\homepage\HomePagePO.class
-com\cognizant\main\main.class
-com\cognizant\Utilities\Navigate.class
-com\cognizant\CarInsurance\CarInsurancePO.class
-com\cognizant\travelinsurance\TravelInsurancePO.class
-com\cognizant\CarInsurance\CarInsurancePage2.class
-com\cognizant\Utilities\DriverSetup.class
-com\cognizant\healthinsurance\HealthInsurancePO.class
-com\cognizant\configuration\Configuration.class

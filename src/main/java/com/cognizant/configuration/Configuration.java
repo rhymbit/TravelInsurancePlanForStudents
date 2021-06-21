@@ -34,7 +34,7 @@ public class Configuration {
             prop.setProperty("geckoDriverPath", webDPath + "\\geckodriver-v0.29.1-win64\\geckodriver.exe");
             prop.setProperty("firefoxDriverPath", webDPath + "\\geckodriver-v0.29.1-win64\\geckodriver.exe");
             prop.setProperty("screenshotPath",  absPath + "\\screenshots");
-            prop.setProperty("usernameFilePath", absPath + "\\src\\main\\resources\\userDetails.xslx");
+            prop.setProperty("excelFilePath", absPath + "\\src\\main\\resources\\InputData.xlsx");
             prop.store(out, "Student Insurance Registration");
         } catch (IOException exp) {
             exp.printStackTrace();
