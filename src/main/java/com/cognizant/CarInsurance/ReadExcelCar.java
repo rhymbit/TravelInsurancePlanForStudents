@@ -1,5 +1,4 @@
-package com.cognizant.apachePOI;
-
+package com.cognizant.CarInsurance;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -9,11 +8,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
-public class ReadExcel {
+public class ReadExcelCar {
     //declaring class level variables and constructor to set filepath and sheetIndex
     private String filePath;
     private int sheetIndex;
-    public ReadExcel(String filePath, int sheetIndex){
+    public ReadExcelCar(String filePath, int sheetIndex){
         this.filePath=filePath;
         this.sheetIndex=sheetIndex;
     }
@@ -41,8 +40,8 @@ public class ReadExcel {
         //int rowCount = row.getLastCellNum();
         int rowCount=1;
         //System.out.println(rowCount);
-        int columnCount = row.getLastCellNum();
-        System.out.println(columnCount);
+        int columnCount = 7;
+        //System.out.println(columnCount);
         for (int i = 1; i <= rowCount; i++) {
             Map<String, String> singleRowData = new HashMap<String, String>();
             Row row1 = sheet.getRow(i);
