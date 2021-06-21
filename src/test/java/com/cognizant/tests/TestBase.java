@@ -7,8 +7,11 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 import org.testng.annotations.*;
 
+import java.util.Map;
+
 public abstract class TestBase {
     protected WebDriver driver;
+    protected Map<String,String> travelInsuranceData=null;
     protected abstract void testClassSetup(String browser);
     protected abstract void testClassTearDown();
     protected abstract void testMethodsSetup();

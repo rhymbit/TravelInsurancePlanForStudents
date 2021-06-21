@@ -38,8 +38,11 @@ public class ReadExcel {
             columnHeader.add(cellIterator.next().getStringCellValue());
         }
         //nested loop to iterate over each row and each cell
-        int rowCount = row.getLastCellNum();
+        //int rowCount = row.getLastCellNum();
+        int rowCount=1;
+        //System.out.println(rowCount);
         int columnCount = row.getLastCellNum();
+        //System.out.println(columnCount);
         for (int i = 1; i <= rowCount; i++) {
             Map<String, String> singleRowData = new HashMap<String, String>();
             Row row1 = sheet.getRow(i);

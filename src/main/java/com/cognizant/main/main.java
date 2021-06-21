@@ -16,9 +16,11 @@ import java.util.concurrent.CancellationException;
 
 public class main {
     public static void main(String[] args) throws IOException {
-        ReadExcel ex = new ReadExcel("Inputdata.xls", 0);
+        Configuration.createConfigurations();
+        ReadExcel ex = new ReadExcel(Configuration.getProperty("excelFilePath"), 0);
         Map<String, Map<String, String>> excelData =ex.getExcelAsMap();
-
+        System.out.println("Excel Data for country : "+excelData.get("1").get("Country"));
+        System.out.println("excelData as Map: "+excelData);
 
 
     }
