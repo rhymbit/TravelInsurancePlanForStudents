@@ -11,5 +11,6 @@
         <module name="StudentInsurance" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="15" />
   </component>
 </project>
