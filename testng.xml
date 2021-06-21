@@ -8,7 +8,7 @@
 <!--            <class name="com.cognizant.tests.TravelInsuranceTest"/>-->
 <!--        </classes>-->
         <classes>
-            <class name="com.cognizant.tests.CarInsurance"/>
+            <class name="com.cognizant.tests.CarInsuranceTest"/>
         </classes>
     </test>
 <!--    <test name="ChromeTest">-->

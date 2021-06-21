@@ -3,10 +3,9 @@ package com.cognizant.tests;
 
 import com.cognizant.configuration.Configuration;
 import com.cognizant.homepage.HomePagePO;
-import com.cognizant.travelinsurance.TravelInsurancePO;
 import org.openqa.selenium.WebDriver;
-import com.cognizant.CarInsurance.CarInsurancePO;
-import com.cognizant.CarInsurance.CarInsurancePage2;
+import com.cognizant.carinsurance.CarInsurancePO;
+import com.cognizant.carinsurance.CarInsurancePage2;
 import com.cognizant.Utilities.DriverSetup;
 import com.cognizant.Utilities.Navigate;
 import org.testng.Reporter;
@@ -17,7 +16,7 @@ import org.testng.annotations.Test;
 
 import java.nio.file.Path;
 
-public class CarInsurance {
+public class CarInsuranceTest {
     private WebDriver driver = null;
     private String screenShotPath = Path.of(Configuration.getProperty("screenshotPath"),
             "carInsurance", "carInsurance.png")
@@ -58,33 +57,36 @@ public class CarInsurance {
         // open homepage url
         homepage.openHomePage();
         Navigate.wait(driver,10);
+
         // click on Car Insurance Button
         CarInsurancePO carInsurancePage = homepage.gotoCarInsurance();
+
         //click on Proceed without Car Number button
-        driver = carInsurancePage.clickonProceed();
+        //driver = carInsurancePage.clickonProceed();
+
         // get fill form instance
-        CarInsurancePage2 carinsurancetest = new CarInsurancePage2();
+        CarInsurancePage2 carinsurancetest = new CarInsurancePage2(driver);
 
         //sets City in the form
-        carinsurancetest.setcity();
+        carinsurancetest.setCity(driver);
 
         //sets Car Brand in the form
-        carinsurancetest.setCarBrand();
+        carinsurancetest.setCarBrand(driver);
 
         //sets Model Name in the form
-        carinsurancetest.setModel();
+        carinsurancetest.setModel(driver);
 
         //sets Type of Vehicle in the form
-        carinsurancetest.setType();
+        carinsurancetest.setType(driver);
 
         //sets Variant of Vehicle in the form
-        carinsurancetest.setVariant();
+        carinsurancetest.setVariant(driver);
 
         //sets Car Registration Year in the form
-        carinsurancetest.setCarRegisterYear();
+        carinsurancetest.setCarRegisterYear(driver);
 
         //sets Name, Email and Phone in the form
-        carinsurancetest.fillDetailsform();
+        carinsurancetest.fillDetailsForm(driver);
 
     }
 }

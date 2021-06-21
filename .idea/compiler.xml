@@ -10,5 +10,6 @@
         <module name="StudentSubmission" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="15" />
   </component>
 </project>
