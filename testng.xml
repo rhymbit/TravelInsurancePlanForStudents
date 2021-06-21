@@ -2,18 +2,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="TestTravelInsurance" thread-count="3" parallel="tests">
-    <test name="EdgeTest">
-        <parameter name="browser" value="Edge"></parameter>
-        <classes>
-            <class name="com.cognizant.tests.TravelInsuranceTest"/>
-        </classes>
-    </test>
-<!--    <test name="ChromeTest">-->
-<!--        <parameter name="browser" value="Chrome"></parameter>-->
+<!--    <test name="EdgeTest">-->
+<!--        <parameter name="browser" value="Edge"></parameter>-->
 <!--        <classes>-->
 <!--            <class name="com.cognizant.tests.TravelInsuranceTest"/>-->
 <!--        </classes>-->
 <!--    </test>-->
+    <test name="ChromeTest">
+        <parameter name="browser" value="Chrome"></parameter>
+        <classes>
+            <class name="com.cognizant.tests.TravelInsuranceTest"/>
+        </classes>
+    </test>
 <!--    <test name="Firefox">-->
 <!--        <parameter name="browser" value="Firefox"></parameter>-->
 <!--        <classes>-->

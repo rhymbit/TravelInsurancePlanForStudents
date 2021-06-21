@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Hackathon" />
         <module name="StudentSubmission" />
+        <module name="StudentInsurance" />
       </profile>
     </annotationProcessing>
   </component>
