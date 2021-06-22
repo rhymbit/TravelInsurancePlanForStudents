@@ -12,9 +12,8 @@ public class main {
         Configuration.createConfigurations();
         ReadExcel excel = new ReadExcel(1);
         Map<String,String> map = excel.getTravelInsuranceData(0);
-        double age = Double.parseDouble(map.get("phoneNumber"));
-        System.out.println((int)age);
-        System.out.println(map.get("phoneNumber"));
+
+//        System.out.println(map.get("phoneNumber"));
 
     }
 }

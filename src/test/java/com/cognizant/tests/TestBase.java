@@ -24,7 +24,7 @@ public abstract class TestBase {
     @BeforeSuite
     protected void suiteSetup() {
         Configuration.createConfigurations();
-        readExcel = new ReadExcel(1);
+        readExcel = new ReadExcel(0);
         travelData = readExcel.getTravelInsuranceData(0);
     }
 

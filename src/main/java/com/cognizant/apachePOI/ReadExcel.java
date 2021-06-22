@@ -2,6 +2,7 @@ package com.cognizant.apachePOI;
 
 import com.cognizant.configuration.Configuration;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -71,7 +72,9 @@ public class ReadExcel {
             Row row1 = sheet.getRow(i);
             for (int j = 0; j < columnCount; j++) {
                 Cell cell = row1.getCell(j);
-                singleRowData.put(columnHeader.get(j), cell.toString());
+                DataFormatter formatter = new DataFormatter();
+                String text = formatter.formatCellValue(cell);
+                singleRowData.put(columnHeader.get(j), text);
             }
             completeSheetData.put(String.valueOf(i), singleRowData);
         }
@@ -81,10 +84,7 @@ public class ReadExcel {
     public Map<String,String> getTravelInsuranceData(int sheetIndex) {
         this.sheetIndex = sheetIndex;
         Map<String,String> map =  getExcelAsMap().get("1");
-        int age1 = (int)Double.parseDouble(map.get("age1"));
-        int age2 = (int)Double.parseDouble(map.get("age2"));
-        map.put("age1", String.valueOf(age1));
-        map.put("age2", String.valueOf(age2));
+
         return map;
     }
 }
