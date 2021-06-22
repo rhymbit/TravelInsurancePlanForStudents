@@ -15,15 +15,16 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 public class ReadExcel {
-    //declaring class level variables and constructor to set filepath and sheetIndex
     private Path filePath;
     private XSSFWorkbook workbook = null;
     private int sheetIndex;
+    private DataFormatter formatter = null;
 
     public ReadExcel(int sheetIndex){
         this.filePath = Path.of(Configuration.getProperty("excelFilePath"));
         this.sheetIndex=sheetIndex;
         readExcelFile();
+        formatter = new DataFormatter();
     }
 
     private void readExcelFile() {
@@ -43,11 +44,10 @@ public class ReadExcel {
     }
     //this method returns desired sheet based on sheet index
     private XSSFSheet getSheet() {
-//        FileInputStream readFile= new FileInputStream(filePath);
-//        XSSFWorkbook workbook=new XSSFWorkbook(readFile);
         XSSFSheet sheet = workbook.getSheetAt(sheetIndex);
         return sheet;
     }
+
     //this methods reads Excel data in map
     public Map<String, Map<String, String>> getExcelAsMap() {
         XSSFSheet sheet= getSheet();
@@ -64,7 +64,6 @@ public class ReadExcel {
         //nested loop to iterate over each row and each cell
         //int rowCount = row.getLastCellNum();
         int rowCount=1;
-        //System.out.println(rowCount);
         int columnCount = row.getLastCellNum();
 
         for (int i = 1; i <= rowCount; i++) {
@@ -72,7 +71,6 @@ public class ReadExcel {
             Row row1 = sheet.getRow(i);
             for (int j = 0; j < columnCount; j++) {
                 Cell cell = row1.getCell(j);
-                DataFormatter formatter = new DataFormatter();
                 String text = formatter.formatCellValue(cell);
                 singleRowData.put(columnHeader.get(j), text);
             }
@@ -84,7 +82,6 @@ public class ReadExcel {
     public Map<String,String> getTravelInsuranceData(int sheetIndex) {
         this.sheetIndex = sheetIndex;
         Map<String,String> map =  getExcelAsMap().get("1");
-
         return map;
     }
 }

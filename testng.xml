@@ -3,7 +3,7 @@
 
 <suite name="TestTravelInsurance" thread-count="3" parallel="tests">
     <test name="EdgeTest">
-        <parameter name="browser" value="Chrome"/>
+        <parameter name="browser" value="Edge"/>
         <classes>
             <class name="com.cognizant.tests.TravelInsuranceTest"/>
         </classes>

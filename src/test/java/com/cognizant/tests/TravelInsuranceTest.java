@@ -16,11 +16,22 @@ import java.nio.file.Path;
 import java.util.concurrent.TimeUnit;
 
 public class TravelInsuranceTest extends TestBase{
-    private String screenShotPath = Path.of(Configuration.getProperty("screenshotPath"),
-            "travelInsurance", "lowestThreeInsurance.png")
-            .toString();
+    private String browserName;
+    private String screenShotPath;
 
-    @Test(enabled = false)
+    private void setScreenShotPath(String browserName) {
+        screenShotPath = Path.of(Configuration.getProperty("screenshotPath"),
+                "travelInsurance", browserName, "lowestThreePriceInsurance.png")
+                .toString();
+    }
+
+    private String countryKey = "country";
+    private String age1Key = "age1";
+    private String age2Key = "age2";
+    private String phoneNumberKey = "phoneNumber";
+    private String priceFilterCondition = "Price: Low to High";
+
+    @Test(enabled = true)
     public void testSearchCountry() {
         // get homepage instance
         HomePagePO homePage = new HomePagePO(driver);
@@ -28,15 +39,14 @@ public class TravelInsuranceTest extends TestBase{
         homePage.openHomePage();
         // click on Travel Insurance Button
         TravelInsurancePO travelInsurancePage = homePage.gotoTravelInsurance();
-        Navigate.wait(driver, 0);
         // Enter 'France' in country box
-        travelInsurancePage.searchCountry(travelData.get("country")); // read from apache poi excel
+        travelInsurancePage.searchCountry(travelData.get(countryKey));
         // Select age '21' for first traveler
-        travelInsurancePage.selectAge(travelData.get("age1"), travelInsurancePage.ageSelector0By); // read from apache poi excel
+        travelInsurancePage.selectAge(travelData.get(age1Key), travelInsurancePage.ageSelector0By);
         // click on add another traveler
         travelInsurancePage.addAnotherTraveler();
         // Select age '22' for second traveler
-        travelInsurancePage.selectAge(travelData.get("age2"), travelInsurancePage.ageSelector1By); // read from apache poi excel
+        travelInsurancePage.selectAge(travelData.get(age2Key), travelInsurancePage.ageSelector1By);
         // click the 'next' button
         travelInsurancePage.clickNext();
         // click on dates from calendar pop-up
@@ -44,11 +54,11 @@ public class TravelInsuranceTest extends TestBase{
         // click on the proceed button
         travelInsurancePage.clickProceedButton();
         // enter mobile number
-        travelInsurancePage.enterMobileNumber(travelData.get("phoneNumber")); // read from apache poi excel
+        travelInsurancePage.enterMobileNumber(travelData.get(phoneNumberKey));
         // click on 'View Plans'
         travelInsurancePage.clickViewPlans();
         // select price low-to-high filter
-        travelInsurancePage.selectPriceOption("Price: Low to High");
+        travelInsurancePage.selectPriceOption(priceFilterCondition);
         // scroll a bit down on the page
         Navigate.scrollWindow(driver, 250);
         // take screenshot of first 3 lowest price

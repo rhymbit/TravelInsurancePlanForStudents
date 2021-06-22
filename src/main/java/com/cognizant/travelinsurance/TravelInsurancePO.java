@@ -34,24 +34,16 @@ public class TravelInsurancePO {
     public TravelInsurancePO(WebDriver driver){
         this.driver = driver;
         String currPageTitle = Navigate.getTitle(driver);
-//        if (currPageTitle.contentEquals("PolicyBazaar Travel Insurance"))
-//        {
-//            throw new IllegalStateException("This is not the Travel Insurance page."+
-//                    " Current page is "+ currPageTitle);
-//        }
     }
 
     public void searchCountry(String country) {
         Navigate.waitForElement(driver,searchCountryBy);
         Navigate.sendKeys(driver.findElement(searchCountryBy), country);
-//        Navigate.waitForElementFluent(driver, countryListingBy);
-        Navigate.clickElement(driver.findElement(countryListingBy));
+        Navigate.wait(driver,5);
         Navigate.actionPressEnter(driver);
-
     }
 
     public void selectAge(String age, By locator) {
-        Navigate.clickElement(driver.findElement(By.xpath("//label[@placeholder='Traveller']")));
         Navigate.waitForElement(driver, locator);
         Navigate.selectByValue(driver.findElement(locator), age);
     }
