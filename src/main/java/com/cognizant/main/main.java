@@ -9,6 +9,8 @@ import java.util.Map;
 
 public class main {
     public static void main(String[] args) {
-        System.out.println("Testing");
+        ReadExcel excel = new ReadExcel(0);
+        Map<String,String> map = excel.getTravelInsuranceData(0);
+        System.out.println(map.get("phoneNumber"));
     }
 }

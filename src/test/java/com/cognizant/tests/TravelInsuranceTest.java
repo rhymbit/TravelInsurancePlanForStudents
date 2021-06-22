@@ -2,6 +2,7 @@ package com.cognizant.tests;
 
 import com.cognizant.Utilities.DriverSetup;
 import com.cognizant.Utilities.Navigate;
+import com.cognizant.apachePOI.ReadExcel;
 import com.cognizant.configuration.Configuration;
 import com.cognizant.homepage.HomePagePO;
 import com.cognizant.travelinsurance.TravelInsurancePO;
@@ -13,15 +14,17 @@ import org.testng.Reporter;
 import org.testng.annotations.*;
 
 import java.nio.file.Path;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class TravelInsuranceTest extends TestBase{
     private String browserName;
     private String screenShotPath;
+    protected Map<String,String> travelData = null;
 
-    private void setScreenShotPath(String browserName) {
+    private void setScreenShotPath(String pngFileName) {
         screenShotPath = Path.of(Configuration.getProperty("screenshotPath"),
-                "travelInsurance", browserName, "lowestThreePriceInsurance.png")
+                "travelInsurance", browserName, pngFileName)
                 .toString();
     }
 
@@ -62,6 +65,7 @@ public class TravelInsuranceTest extends TestBase{
         // scroll a bit down on the page
         Navigate.scrollWindow(driver, 250);
         // take screenshot of first 3 lowest price
+        setScreenShotPath("lowestThreePriceInsurance.png");
         Navigate.screenshot(driver, screenShotPath);
     }
 
@@ -69,15 +73,22 @@ public class TravelInsuranceTest extends TestBase{
     @BeforeClass
     @Parameters("browser")
     protected void testClassSetup(String browser) {
+
+        readExcel = new ReadExcel(0);
+        travelData = readExcel.getTravelInsuranceData(0);
+
         DriverSetup instance = DriverSetup.getInstance();
         if (browser.equalsIgnoreCase("edge")){
             driver = instance.getDriver("edge");
+            browserName = "edge";
         }
         else if (browser.equalsIgnoreCase("chrome")) {
             driver = instance.getDriver("chrome");
+            browserName = "chrome";
         }
         else if (browser.equalsIgnoreCase("firefox")) {
             driver = instance.getDriver("firefox");
+            browserName = "firefox";
         }
         else {
             Reporter.log("Install one of the following browsers to run this project:-");
@@ -91,6 +102,7 @@ public class TravelInsuranceTest extends TestBase{
     @Override
     @AfterClass
     protected void testClassTearDown() {
+        readExcel.closeWorkbook();
         Navigate.closeDriver(driver);
     }
 

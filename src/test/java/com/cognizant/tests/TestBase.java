@@ -14,7 +14,6 @@ import java.util.Map;
 public abstract class TestBase {
     protected WebDriver driver;
     protected ReadExcel readExcel = null;
-    protected Map<String,String> travelData = null;
     protected Map<String,String> carInsuranceData = null;
     protected abstract void testClassSetup(String browser);
     protected abstract void testClassTearDown();
@@ -24,12 +23,9 @@ public abstract class TestBase {
     @BeforeSuite
     protected void suiteSetup() {
         Configuration.createConfigurations();
-        readExcel = new ReadExcel(0);
-        travelData = readExcel.getTravelInsuranceData(0);
     }
 
     @AfterSuite
     protected void suiteTearDown() {
-        readExcel.closeWorkbook();
     }
 }
