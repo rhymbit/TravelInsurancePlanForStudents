@@ -20,7 +20,6 @@ public class DriverSetup {
         return instance;
     }
 
-    // set driver instance for a particular browser
     public final void setDriver(String browser) {
         switch (browser) {
             case "firefox":
