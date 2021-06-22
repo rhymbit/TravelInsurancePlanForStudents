@@ -5,19 +5,31 @@ import com.cognizant.Utilities.Navigate;
 import com.cognizant.configuration.Configuration;
 import com.cognizant.homepage.HomePagePO;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
-public class HealthInsuranceTest {
-    private WebDriver driver = null;
+import java.util.List;
 
-    @BeforeTest
+public class HealthInsuranceTest extends TestBase{
+
+    @Test
+    public void HealthInsurance() {
+        HomePagePO homepage = new HomePagePO(driver);
+        // open homepage url
+        homepage.openHomePage();
+        Navigate.wait(driver, 10);
+        List<WebElement> list = homepage.fetchHealthInsuranceMenu();
+        System.out.println("Menu Items are: ");
+        for (WebElement element : list) {
+            Reporter.log(element.getAttribute("innerHTML"));
+        }
+    }
+
+    @Override
+    @BeforeClass
     @Parameters("browser")
-    public void setup(String browser) {
-        Configuration.createConfigurations();
+    protected void testClassSetup(String browser) {
         DriverSetup instance = DriverSetup.getInstance();
         if (browser.equalsIgnoreCase("edge")){
             driver = instance.getDriver("edge");
@@ -30,24 +42,23 @@ public class HealthInsuranceTest {
         }
         else {
             Reporter.log("Install one of the following browsers to run this project:-");
-            Reporter.log("Microsft Edge");
+            Reporter.log("Microsoft Edge");
             Reporter.log("Google Chrome");
             Reporter.log("Firefox");
             System.exit(1);
         }
     }
 
-    @AfterTest
-    public void cleanup() {
+    @Override
+    @AfterClass
+    protected void testClassTearDown() {
         Navigate.closeDriver(driver);
     }
 
-    @Test
-    public void HealthInsurance(){
-        HomePagePO homepage = new HomePagePO(driver);
-        // open homepage url
-        homepage.openHomePage();
-        Navigate.wait(driver,10);
-        homepage.fetchHealthInsuranceMenu();
-    }
+    @Override
+    protected void testMethodsSetup() { }
+
+    @Override
+    @AfterTest
+    protected void testMethodsTearDown() { }
 }

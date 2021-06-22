@@ -40,13 +40,10 @@ public class HomePagePO {
         return new CarInsurancePO(driver);
     }
 
-    public void fetchHealthInsuranceMenu() {
+    public List<WebElement> fetchHealthInsuranceMenu() {
 
         WebElement ListOfMenus =  driver.findElement(healthInsuranceMenuBy);
-        List<WebElement> ListItem = ListOfMenus.findElements(By.cssSelector("li a span"));
-        System.out.println("Menu Items are: ");
-        for (WebElement element : ListItem) {
-            System.out.println(element.getAttribute("innerHTML"));
-        }
+        List<WebElement> listItem = ListOfMenus.findElements(By.cssSelector("li a span"));
+        return listItem;
     }
 }

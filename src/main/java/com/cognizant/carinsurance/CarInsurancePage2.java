@@ -27,8 +27,8 @@ public class CarInsurancePage2 {
         driver =  page.clickonProceed();
     }
 
-    public void setCity(WebDriver driver){
-        Navigate.sendKeys(driver.findElement(placeBy), "MP14");
+    public void setCity(WebDriver driver, String cityName){
+        Navigate.sendKeys(driver.findElement(placeBy), cityName);
         driver.manage().timeouts().implicitlyWait(500, TimeUnit.MILLISECONDS);
         Navigate.clickElement(driver.findElement(clickBy));
     }
@@ -59,11 +59,12 @@ public class CarInsurancePage2 {
         Navigate.clickElement(driver.findElement(carRegisterYearBy));
     }
 
-    public void fillDetailsForm(WebDriver driver){
+    public void fillDetailsForm(WebDriver driver, String name,
+                                String fakeEmail, String invalidPhone){
         Navigate.wait(driver,5);
-        Navigate.sendKeys(driver.findElement(nameBy), "Ayush Saxena");
-        Navigate.sendKeys(driver.findElement(emailBy), "fakeegmail.com");
-        Navigate.sendKeys(driver.findElement(phoneBy), "987654320");
+        Navigate.sendKeys(driver.findElement(nameBy), name);
+        Navigate.sendKeys(driver.findElement(emailBy), fakeEmail);
+        Navigate.sendKeys(driver.findElement(phoneBy), invalidPhone);
         Navigate.clickElement(driver.findElement(submitBy));
     }
 

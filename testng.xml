@@ -6,18 +6,24 @@
         <parameter name="browser" value="Edge"/>
         <classes>
             <class name="com.cognizant.tests.TravelInsuranceTest"/>
+            <class name="com.cognizant.tests.CarInsuranceTest" />
+            <class name="com.cognizant.tests.HealthInsuranceTest" />
         </classes>
     </test>
 <!--    <test name="ChromeTest">-->
 <!--        <parameter name="browser" value="Chrome"></parameter>-->
 <!--        <classes>-->
 <!--            <class name="com.cognizant.tests.TravelInsuranceTest"/>-->
+<!--            <class name="com.cognizant.tests.CarInsuranceTest" />-->
+<!--            <class name="com.cognizant.tests.HealthInsuranceTest" />-->
 <!--        </classes>-->
 <!--    </test>-->
 <!--    <test name="Firefox">-->
 <!--        <parameter name="browser" value="Firefox"></parameter>-->
 <!--        <classes>-->
 <!--            <class name="com.cognizant.tests.TravelInsuranceTest"/>-->
+<!--            <class name="com.cognizant.tests.CarInsuranceTest" />-->
+<!--            <class name="com.cognizant.tests.HealthInsuranceTest" />-->
 <!--        </classes>-->
 <!--    </test>-->
     <listeners>
