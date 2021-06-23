@@ -1,31 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="TestTravelInsurance" thread-count="3" parallel="tests">
-    <test name="EdgeTest">
-        <parameter name="browser" value="Edge"/>
-        <classes>
-            <class name="com.cognizant.tests.TravelInsuranceTest"/>
-            <class name="com.cognizant.tests.CarInsuranceTest" />
-            <class name="com.cognizant.tests.HealthInsuranceTest" />
-        </classes>
+<!-- policybazar.com test suite -->
+<suite name="PolicyBazarTests" parallel="tests">
+<!--    Google Chrome tests configurations-->
+    <parameter name="browser" value="chrome" />
+    <parameter name="platform" value="Windows 10" />
+    <parameter name="environment" value="remote" />
+    <test name="ChromeTest">
+        <packages>
+            <package name="com.cognizant.tests" />
+        </packages>
     </test>
-<!--    <test name="ChromeTest">-->
-<!--        <parameter name="browser" value="Chrome"></parameter>-->
-<!--        <classes>-->
-<!--            <class name="com.cognizant.tests.TravelInsuranceTest"/>-->
-<!--            <class name="com.cognizant.tests.CarInsuranceTest" />-->
-<!--            <class name="com.cognizant.tests.HealthInsuranceTest" />-->
-<!--        </classes>-->
+
+<!--    Microsoft Edge Browser tests configurations-->
+<!--    <parameter name="browser" value="edge" />-->
+<!--    <parameter name="platform" value="WIN10" />-->
+<!--    <parameter name="environment" value="remote" />-->
+<!--    <test name="EdgeTest">-->
+<!--        <packages>-->
+<!--            <package name="com.cognizant.tests" />-->
+<!--        </packages>-->
 <!--    </test>-->
+
+<!--    Firefox Browser Tests configurations-->
+<!--    <parameter name="browser" value="firefox" />-->
+<!--    <parameter name="platform" value="Windows 10" />-->
+<!--    <parameter name="environment" value="remote" />-->
 <!--    <test name="Firefox">-->
-<!--        <parameter name="browser" value="Firefox"></parameter>-->
-<!--        <classes>-->
-<!--            <class name="com.cognizant.tests.TravelInsuranceTest"/>-->
-<!--            <class name="com.cognizant.tests.CarInsuranceTest" />-->
-<!--            <class name="com.cognizant.tests.HealthInsuranceTest" />-->
-<!--        </classes>-->
+<!--        <packages>-->
+<!--            <package name="com.cognizant.tests" />-->
+<!--        </packages>-->
 <!--    </test>-->
+
+<!--    Listener class configurations-->
     <listeners>
         <listener class-name="com.cognizant.tests.listeners.TestListener" />
     </listeners>

@@ -1,6 +1,6 @@
 package com.cognizant.carinsurance;
 
-import com.cognizant.Utilities.Navigate;
+import com.cognizant.utilities.Navigate;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

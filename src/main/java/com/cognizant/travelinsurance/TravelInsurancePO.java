@@ -1,15 +1,9 @@
 package com.cognizant.travelinsurance;
 
 
-import com.cognizant.Utilities.Navigate;
-import com.cognizant.homepage.HomePagePO;
+import com.cognizant.utilities.Navigate;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-
-import java.util.Locale;
-import java.util.concurrent.TimeUnit;
 
 public class TravelInsurancePO {
     public WebDriver driver = null;

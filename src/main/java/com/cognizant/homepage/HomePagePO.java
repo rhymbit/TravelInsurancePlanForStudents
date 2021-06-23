@@ -1,7 +1,7 @@
 package com.cognizant.homepage;
 
 import com.cognizant.carinsurance.CarInsurancePO;
-import com.cognizant.Utilities.Navigate;
+import com.cognizant.utilities.Navigate;
 import com.cognizant.configuration.Configuration;
 import com.cognizant.travelinsurance.TravelInsurancePO;
 import org.openqa.selenium.By;

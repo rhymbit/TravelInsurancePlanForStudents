@@ -1,21 +1,18 @@
 package com.cognizant.tests;
 
-import com.cognizant.Utilities.DriverSetup;
-import com.cognizant.Utilities.Navigate;
+import com.cognizant.utilities.DriverSetup;
+import com.cognizant.utilities.Navigate;
 import com.cognizant.apachePOI.ReadExcel;
 import com.cognizant.configuration.Configuration;
 import com.cognizant.homepage.HomePagePO;
 import com.cognizant.travelinsurance.TravelInsurancePO;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.*;
 
 import java.nio.file.Path;
+import java.sql.Driver;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 public class TravelInsuranceTest extends TestBase{
     private String browserName;
@@ -24,8 +21,7 @@ public class TravelInsuranceTest extends TestBase{
 
     private void setScreenShotPath(String pngFileName) {
         screenShotPath = Path.of(Configuration.getProperty("screenshotPath"),
-                "travelInsurance", browserName, pngFileName)
-                .toString();
+                "travelInsurance", browserName, pngFileName).toString();
     }
 
     private String countryKey = "country";
@@ -36,6 +32,7 @@ public class TravelInsuranceTest extends TestBase{
 
     @Test(enabled = true)
     public void testSearchCountry() {
+        System.out.println(driver);
         // get homepage instance
         HomePagePO homePage = new HomePagePO(driver);
         // open homepage url
@@ -73,37 +70,37 @@ public class TravelInsuranceTest extends TestBase{
     @BeforeClass
     @Parameters("browser")
     protected void testClassSetup(String browser) {
-
+        browserName = browser;
         readExcel = new ReadExcel(0);
         travelData = readExcel.getTravelInsuranceData(0);
 
-        DriverSetup instance = DriverSetup.getInstance();
-        if (browser.equalsIgnoreCase("edge")){
-            driver = instance.getDriver("edge");
-            browserName = "edge";
-        }
-        else if (browser.equalsIgnoreCase("chrome")) {
-            driver = instance.getDriver("chrome");
-            browserName = "chrome";
-        }
-        else if (browser.equalsIgnoreCase("firefox")) {
-            driver = instance.getDriver("firefox");
-            browserName = "firefox";
-        }
-        else {
-            Reporter.log("Install one of the following browsers to run this project:-");
-            Reporter.log("Microsoft Edge");
-            Reporter.log("Google Chrome");
-            Reporter.log("Firefox");
-            System.exit(1);
-        }
+//        DriverSetup instance = DriverSetup.getInstance();
+//        if (browser.equalsIgnoreCase("edge")){
+//            driver = instance.getDriver("edge");
+//            browserName = "edge";
+//        }
+//        else if (browser.equalsIgnoreCase("chrome")) {
+//            driver = instance.getDriver("chrome");
+//            browserName = "chrome";
+//        }
+//        else if (browser.equalsIgnoreCase("firefox")) {
+//            driver = instance.getDriver("firefox");
+//            browserName = "firefox";
+//        }
+//        else {
+//            Reporter.log("Install one of the following browsers to run this project:-");
+//            Reporter.log("Microsoft Edge");
+//            Reporter.log("Google Chrome");
+//            Reporter.log("Firefox");
+//            System.exit(1);
+//        }
     }
 
     @Override
     @AfterClass
     protected void testClassTearDown() {
         readExcel.closeWorkbook();
-        Navigate.closeDriver(driver);
+//        driver.close();
     }
 
     @Override
