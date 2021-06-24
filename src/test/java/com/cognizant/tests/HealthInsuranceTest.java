@@ -1,8 +1,8 @@
 package com.cognizant.tests;
 
-import com.cognizant.Utilities.DriverSetup;
-import com.cognizant.Utilities.Navigate;
-import com.cognizant.configuration.Configuration;
+import com.cognizant.utilities.DriverSetup;
+import com.cognizant.utilities.Global_VARS;
+import com.cognizant.utilities.BrowserUtils;
 import com.cognizant.homepage.HomePagePO;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,13 +12,14 @@ import org.testng.annotations.*;
 import java.util.List;
 
 public class HealthInsuranceTest extends TestBase{
+    private WebDriver driver;
 
-    @Test
+    @Test(enabled = true)
     public void HealthInsurance() {
         HomePagePO homepage = new HomePagePO(driver);
         // open homepage url
         homepage.openHomePage();
-        Navigate.wait(driver, 10);
+        BrowserUtils.wait(driver, 10);
         List<WebElement> list = homepage.fetchHealthInsuranceMenu();
         System.out.println("Menu Items are: ");
         for (WebElement element : list) {
@@ -26,33 +27,27 @@ public class HealthInsuranceTest extends TestBase{
         }
     }
 
-    @Override
     @BeforeClass
-    @Parameters("browser")
-    protected void testClassSetup(String browser) {
-        DriverSetup instance = DriverSetup.getInstance();
-        if (browser.equalsIgnoreCase("edge")){
-            driver = instance.getDriver("edge");
-        }
-        else if (browser.equalsIgnoreCase("chrome")) {
-            driver = instance.getDriver("chrome");
-        }
-        else if (browser.equalsIgnoreCase("firefox")) {
-            driver = instance.getDriver("firefox");
-        }
-        else {
-            Reporter.log("Install one of the following browsers to run this project:-");
-            Reporter.log("Microsoft Edge");
-            Reporter.log("Google Chrome");
-            Reporter.log("Firefox");
-            System.exit(1);
-        }
+    @Parameters({"browser", "platform", "environment"})
+    protected void testClassSetup(@Optional(Global_VARS.BROWSER) String browser,
+                                  @Optional(Global_VARS.PLATFORM) String platform,
+                                  @Optional(Global_VARS.ENVIRONMENT) String environment) {
+
+        Global_VARS.DEF_BROWSER = System.getProperty("browser", browser);
+        Global_VARS.DEF_PLATFORM = System.getProperty("platform", platform);
+        Global_VARS.DEF_ENVIRONMENT = System.getProperty("environment", environment);
+
+        DriverSetup.getInstance().setDriver(Global_VARS.DEF_BROWSER,
+                Global_VARS.DEF_PLATFORM,
+                Global_VARS.DEF_ENVIRONMENT);
+
+        driver = DriverSetup.getInstance().getDriver();
     }
 
     @Override
     @AfterClass
     protected void testClassTearDown() {
-        Navigate.closeDriver(driver);
+        DriverSetup.getInstance().closeDriver(driver);
     }
 
     @Override

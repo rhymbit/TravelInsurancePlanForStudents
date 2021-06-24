@@ -1,7 +1,7 @@
 package com.cognizant.homepage;
 
 import com.cognizant.carinsurance.CarInsurancePO;
-import com.cognizant.Utilities.Navigate;
+import com.cognizant.utilities.BrowserUtils;
 import com.cognizant.configuration.Configuration;
 import com.cognizant.travelinsurance.TravelInsurancePO;
 import org.openqa.selenium.By;
@@ -26,17 +26,17 @@ public class HomePagePO {
     // this method should be called very first at the start
     public void openHomePage() {
         baseUrl = Configuration.getProperty("baseUrl");
-        Navigate.gotoUrl(driver, baseUrl);
-        Navigate.wait(driver, 0);
+        BrowserUtils.gotoUrl(driver, baseUrl);
+        BrowserUtils.wait(driver, 0);
     }
 
     public TravelInsurancePO gotoTravelInsurance() {
-        Navigate.clickElement(driver.findElement(travelInsuranceBy));
+        BrowserUtils.clickElement(driver.findElement(travelInsuranceBy));
         return new TravelInsurancePO(driver);
     }
 
     public CarInsurancePO gotoCarInsurance() {
-        Navigate.clickElement(driver.findElement(carInsuranceBy));
+        BrowserUtils.clickElement(driver.findElement(carInsuranceBy));
         return new CarInsurancePO(driver);
     }
 

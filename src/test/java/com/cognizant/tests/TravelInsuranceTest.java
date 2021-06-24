@@ -1,31 +1,27 @@
 package com.cognizant.tests;
 
-import com.cognizant.Utilities.DriverSetup;
-import com.cognizant.Utilities.Navigate;
+import com.cognizant.utilities.DriverSetup;
+import com.cognizant.utilities.Global_VARS;
+import com.cognizant.utilities.BrowserUtils;
 import com.cognizant.apachePOI.ReadExcel;
 import com.cognizant.configuration.Configuration;
 import com.cognizant.homepage.HomePagePO;
 import com.cognizant.travelinsurance.TravelInsurancePO;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-import org.testng.Reporter;
 import org.testng.annotations.*;
 
 import java.nio.file.Path;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 public class TravelInsuranceTest extends TestBase{
+    private WebDriver driver;
     private String browserName;
     private String screenShotPath;
     protected Map<String,String> travelData = null;
 
     private void setScreenShotPath(String pngFileName) {
         screenShotPath = Path.of(Configuration.getProperty("screenshotPath"),
-                "travelInsurance", browserName, pngFileName)
-                .toString();
+                "travelInsurance", browserName, pngFileName).toString();
     }
 
     private String countryKey = "country";
@@ -63,47 +59,38 @@ public class TravelInsuranceTest extends TestBase{
         // select price low-to-high filter
         travelInsurancePage.selectPriceOption(priceFilterCondition);
         // scroll a bit down on the page
-        Navigate.scrollWindow(driver, 250);
+        BrowserUtils.scrollWindow(driver, 250);
         // take screenshot of first 3 lowest price
         setScreenShotPath("lowestThreePriceInsurance.png");
-        Navigate.screenshot(driver, screenShotPath);
+        BrowserUtils.screenshot(driver, screenShotPath);
     }
 
-    @Override
     @BeforeClass
-    @Parameters("browser")
-    protected void testClassSetup(String browser) {
+    @Parameters({"browser", "platform", "environment"})
+    protected void testClassSetup(@Optional(Global_VARS.BROWSER) String browser,
+                                  @Optional(Global_VARS.PLATFORM) String platform,
+                                  @Optional(Global_VARS.ENVIRONMENT) String environment) {
 
+        Global_VARS.DEF_BROWSER = System.getProperty("browser", browser);
+        Global_VARS.DEF_PLATFORM = System.getProperty("platform", platform);
+        Global_VARS.DEF_ENVIRONMENT = System.getProperty("environment", environment);
+
+        DriverSetup.getInstance().setDriver(Global_VARS.DEF_BROWSER,
+                Global_VARS.DEF_PLATFORM,
+                Global_VARS.DEF_ENVIRONMENT);
+
+        driver = DriverSetup.getInstance().getDriver();
+
+        browserName = browser;
         readExcel = new ReadExcel(0);
         travelData = readExcel.getTravelInsuranceData(0);
-
-        DriverSetup instance = DriverSetup.getInstance();
-        if (browser.equalsIgnoreCase("edge")){
-            driver = instance.getDriver("edge");
-            browserName = "edge";
-        }
-        else if (browser.equalsIgnoreCase("chrome")) {
-            driver = instance.getDriver("chrome");
-            browserName = "chrome";
-        }
-        else if (browser.equalsIgnoreCase("firefox")) {
-            driver = instance.getDriver("firefox");
-            browserName = "firefox";
-        }
-        else {
-            Reporter.log("Install one of the following browsers to run this project:-");
-            Reporter.log("Microsoft Edge");
-            Reporter.log("Google Chrome");
-            Reporter.log("Firefox");
-            System.exit(1);
-        }
     }
 
     @Override
     @AfterClass
     protected void testClassTearDown() {
         readExcel.closeWorkbook();
-        Navigate.closeDriver(driver);
+        DriverSetup.getInstance().closeDriver(driver);
     }
 
     @Override

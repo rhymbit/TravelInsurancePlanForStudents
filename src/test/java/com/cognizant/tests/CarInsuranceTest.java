@@ -3,12 +3,12 @@ package com.cognizant.tests;
 import com.cognizant.apachePOI.ReadExcelCar;
 import com.cognizant.configuration.Configuration;
 import com.cognizant.homepage.HomePagePO;
-import org.openqa.selenium.WebDriver;
 import com.cognizant.carinsurance.CarInsurancePO;
 import com.cognizant.carinsurance.CarInsurancePage2;
-import com.cognizant.Utilities.DriverSetup;
-import com.cognizant.Utilities.Navigate;
-import org.testng.Reporter;
+import com.cognizant.utilities.DriverSetup;
+import com.cognizant.utilities.Global_VARS;
+import com.cognizant.utilities.BrowserUtils;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
 import java.io.IOException;
@@ -16,6 +16,7 @@ import java.nio.file.Path;
 import java.util.Map;
 
 public class CarInsuranceTest extends TestBase {
+    private WebDriver driver;
     private String browserName;
     private String screenShotPath;
 
@@ -27,7 +28,7 @@ public class CarInsuranceTest extends TestBase {
 
     private ReadExcelCar ex = new ReadExcelCar(Configuration.getProperty("excelFilePath"), 1);
 
-    @Test
+    @Test(enabled = true)
     public void testCarInsuranceCase() throws IOException{
         Map<String, Map<String, String>> excelData =ex.getExcelAsMap();
 //        int index = 1;
@@ -38,7 +39,7 @@ public class CarInsuranceTest extends TestBase {
         HomePagePO homepage = new HomePagePO(driver);
         // open homepage url
         homepage.openHomePage();
-        Navigate.wait(driver,10);
+        BrowserUtils.wait(driver,10);
 
         // click on Car Insurance Button
         CarInsurancePO carInsurancePage = homepage.gotoCarInsurance();
@@ -74,7 +75,8 @@ public class CarInsuranceTest extends TestBase {
                 excelData.get("1").get("invalid phone").toString());
         //captures Screenshot
         setScreenShotPath("carInsurance1.png");
-        Navigate.screenshot(driver, screenShotPath);
+        BrowserUtils.screenshot(driver, screenShotPath);
+
 //        index = index + 1;
 //        screenShotPath = Path.of(Configuration.getProperty("screenshotPath"),
 //                "carInsurance", "carInsurance" + index + ".png")
@@ -83,7 +85,7 @@ public class CarInsuranceTest extends TestBase {
         carinsurancetest.fillDetailsForm(driver, excelData.get("1").get("name").toString(), excelData.get("1").get("valid email").toString(), excelData.get("1").get("invalid phone").toString());
         //captures Screenshot
         setScreenShotPath("carInsurance2.png");
-        Navigate.screenshot(driver, screenShotPath);
+        BrowserUtils.screenshot(driver, screenShotPath);
 //        index = index + 1;
 //        screenShotPath = Path.of(Configuration.getProperty("screenshotPath"),
 //                "carInsurance", "carInsurance" + index + ".png")
@@ -92,7 +94,7 @@ public class CarInsuranceTest extends TestBase {
         carinsurancetest.fillDetailsForm(driver, excelData.get("1").get("name").toString(), excelData.get("1").get("invalid email").toString(), excelData.get("1").get("valid phone").toString());
         //captures Screenshot
         setScreenShotPath("carInsurance3.png");
-        Navigate.screenshot(driver, screenShotPath);
+        BrowserUtils.screenshot(driver, screenShotPath);
 //        index = index + 1;
 //        screenShotPath = Path.of(Configuration.getProperty("screenshotPath"),
 //                "carInsurance", "carInsurance" + index + ".png")
@@ -101,39 +103,31 @@ public class CarInsuranceTest extends TestBase {
         carinsurancetest.fillDetailsForm(driver, excelData.get("1").get("name").toString(), excelData.get("1").get("valid email").toString(), excelData.get("1").get("valid phone").toString());
         //captures Screenshot
         setScreenShotPath("carInsurance4.png");
-        Navigate.screenshot(driver, screenShotPath);
+        BrowserUtils.screenshot(driver, screenShotPath);
     }
 
-    @Override
     @BeforeClass
-    @Parameters("browser")
-    protected void testClassSetup(String browser) {
-        DriverSetup instance = DriverSetup.getInstance();
-        if (browser.equalsIgnoreCase("edge")){
-            driver = instance.getDriver("edge");
-            browserName = "edge";
-        }
-        else if (browser.equalsIgnoreCase("chrome")) {
-            driver = instance.getDriver("chrome");
-            browserName = "chrome";
-        }
-        else if (browser.equalsIgnoreCase("firefox")) {
-            driver = instance.getDriver("firefox");
-            browserName = "firefox";
-        }
-        else {
-            Reporter.log("Install one of the following browsers to run this project:-");
-            Reporter.log("Microsoft Edge");
-            Reporter.log("Google Chrome");
-            Reporter.log("Firefox");
-            System.exit(1);
-        }
+    @Parameters({"browser", "platform", "environment"})
+    protected void testClassSetup(@Optional(Global_VARS.BROWSER) String browser,
+                                  @Optional(Global_VARS.PLATFORM) String platform,
+                                  @Optional(Global_VARS.ENVIRONMENT) String environment) {
+
+        Global_VARS.DEF_BROWSER = System.getProperty("browser", browser);
+        Global_VARS.DEF_PLATFORM = System.getProperty("platform", platform);
+        Global_VARS.DEF_ENVIRONMENT = System.getProperty("environment", environment);
+
+        DriverSetup.getInstance().setDriver(Global_VARS.DEF_BROWSER,
+                Global_VARS.DEF_PLATFORM,
+                Global_VARS.DEF_ENVIRONMENT);
+
+        driver = DriverSetup.getInstance().getDriver();
+        browserName = browser;
     }
 
     @Override
     @AfterClass
     protected void testClassTearDown() {
-        Navigate.closeDriver(driver);
+        DriverSetup.getInstance().closeDriver(driver);
     }
 
     @Override
