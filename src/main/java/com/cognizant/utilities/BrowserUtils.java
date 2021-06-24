@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.function.Function;
 
-public class Navigate {
+public class BrowserUtils {
 
     //Previous Page
     public static WebDriver navigateBack(WebDriver driver)
@@ -124,6 +124,11 @@ public class Navigate {
     }
 
     public static void sendKeys(WebElement elem, String value) {
+        elem.clear();
         elem.sendKeys(value);
+    }
+
+    public static void clearKeys(WebElement elem) {
+        elem.clear();
     }
 }

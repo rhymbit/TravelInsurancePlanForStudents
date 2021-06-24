@@ -3,6 +3,7 @@
 
 <!-- policybazar.com test suite -->
 <suite name="PolicyBazarTests" parallel="tests">
+
 <!--    Google Chrome tests configurations-->
     <parameter name="browser" value="chrome" />
     <parameter name="platform" value="Windows 10" />
@@ -14,14 +15,14 @@
     </test>
 
 <!--    Microsoft Edge Browser tests configurations-->
-<!--    <parameter name="browser" value="edge" />-->
-<!--    <parameter name="platform" value="WIN10" />-->
-<!--    <parameter name="environment" value="remote" />-->
-<!--    <test name="EdgeTest">-->
-<!--        <packages>-->
-<!--            <package name="com.cognizant.tests" />-->
-<!--        </packages>-->
-<!--    </test>-->
+    <parameter name="browser" value="edge" />
+    <parameter name="platform" value="Windows 10" />
+    <parameter name="environment" value="remote" />
+    <test name="EdgeTest">
+        <packages>
+            <package name="com.cognizant.tests" />
+        </packages>
+    </test>
 
 <!--    Firefox Browser Tests configurations-->
 <!--    <parameter name="browser" value="firefox" />-->

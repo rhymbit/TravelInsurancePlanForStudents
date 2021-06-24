@@ -1,7 +1,7 @@
 package com.cognizant.travelinsurance;
 
 
-import com.cognizant.utilities.Navigate;
+import com.cognizant.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -27,59 +27,59 @@ public class TravelInsurancePO {
 
     public TravelInsurancePO(WebDriver driver){
         this.driver = driver;
-        String currPageTitle = Navigate.getTitle(driver);
+        String currPageTitle = BrowserUtils.getTitle(driver);
     }
 
     public void searchCountry(String country) {
-        Navigate.waitForElement(driver,searchCountryBy);
-        Navigate.sendKeys(driver.findElement(searchCountryBy), country);
-        Navigate.wait(driver,5);
-        Navigate.actionPressEnter(driver);
+        BrowserUtils.waitForElement(driver,searchCountryBy);
+        BrowserUtils.sendKeys(driver.findElement(searchCountryBy), country);
+        BrowserUtils.wait(driver,5);
+        BrowserUtils.actionPressEnter(driver);
     }
 
     public void selectAge(String age, By locator) {
-        Navigate.waitForElement(driver, locator);
-        Navigate.selectByValue(driver.findElement(locator), age);
+        BrowserUtils.waitForElement(driver, locator);
+        BrowserUtils.selectByValue(driver.findElement(locator), age);
     }
 
     public void addAnotherTraveler() {
-        Navigate.waitForElement(driver, addAnotherTravelerBy);
-        Navigate.clickElement(driver.findElement(addAnotherTravelerBy));
+        BrowserUtils.waitForElement(driver, addAnotherTravelerBy);
+        BrowserUtils.clickElement(driver.findElement(addAnotherTravelerBy));
     }
 
     public void clickNext() {
-        Navigate.clickElement(driver.findElement(nextBy));
+        BrowserUtils.clickElement(driver.findElement(nextBy));
     }
 
     public void selectCalendarDates() {
-        Navigate.waitForElement(driver, dateSelectBoxBy);
-        Navigate.waitForElement(driver, dateFirstBy);
-        Navigate.waitForElement(driver, dateSecondBy);
-        Navigate.clickElement(driver.findElement(dateFirstBy));
-        Navigate.clickElement(driver.findElement(dateSecondBy));
+        BrowserUtils.waitForElement(driver, dateSelectBoxBy);
+        BrowserUtils.waitForElement(driver, dateFirstBy);
+        BrowserUtils.waitForElement(driver, dateSecondBy);
+        BrowserUtils.clickElement(driver.findElement(dateFirstBy));
+        BrowserUtils.clickElement(driver.findElement(dateSecondBy));
     }
 
     public void clickProceedButton() {
-        Navigate.clickElement(driver.findElement(proceedBy));
+        BrowserUtils.clickElement(driver.findElement(proceedBy));
     }
 
     public void enterMobileNumber(String mobileNumber) {
-        Navigate.waitForElement(driver, mobileNumberBy);
-        Navigate.sendKeys(driver.findElement(mobileNumberBy), mobileNumber);
+        BrowserUtils.waitForElement(driver, mobileNumberBy);
+        BrowserUtils.sendKeys(driver.findElement(mobileNumberBy), mobileNumber);
     }
 
     public void clickViewPlans() {
-        Navigate.clickElement(driver.findElement(viewPlansBy));
+        BrowserUtils.clickElement(driver.findElement(viewPlansBy));
     }
 
     public void selectPriceOption(String selectOption) {
-        Navigate.waitForElement(driver, priceFilterBy);
+        BrowserUtils.waitForElement(driver, priceFilterBy);
         switch (selectOption.toLowerCase()) {
             case "price: high to low":
-                Navigate.selectByIndex(driver.findElement(priceFilterBy), 2);
+                BrowserUtils.selectByIndex(driver.findElement(priceFilterBy), 2);
                 break;
             default:
-                Navigate.selectByIndex(driver.findElement(priceFilterBy), 1);
+                BrowserUtils.selectByIndex(driver.findElement(priceFilterBy), 1);
                 break;
         }
 
