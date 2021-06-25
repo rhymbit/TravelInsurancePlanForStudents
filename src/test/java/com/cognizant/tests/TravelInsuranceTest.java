@@ -30,7 +30,7 @@ public class TravelInsuranceTest extends TestBase{
     private String phoneNumberKey = "phoneNumber";
     private String priceFilterCondition = "Price: Low to High";
 
-    @Test(enabled = true, successPercentage = 0)
+    @Test(enabled = false, successPercentage = 0)
     public void testSearchCountry() {
         // get homepage instance
         HomePagePO homePage = new HomePagePO(driver);

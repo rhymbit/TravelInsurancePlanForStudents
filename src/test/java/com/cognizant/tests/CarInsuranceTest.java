@@ -28,7 +28,7 @@ public class CarInsuranceTest extends TestBase {
 
     private ReadExcelCar ex = new ReadExcelCar(Configuration.getProperty("excelFilePath"), 1);
 
-    @Test(enabled = true, successPercentage = 0)
+    @Test(enabled = false, successPercentage = 0)
     public void testCarInsuranceCase() throws IOException{
         Map<String, Map<String, String>> excelData =ex.getExcelAsMap();
 //        int index = 1;
