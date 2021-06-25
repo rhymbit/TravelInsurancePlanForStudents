@@ -33,22 +33,25 @@ public class TravelInsurancePO {
     public void searchCountry(String country) {
         BrowserUtils.waitForElement(driver,searchCountryBy);
         BrowserUtils.sendKeys(driver.findElement(searchCountryBy), country);
-        BrowserUtils.wait(driver,5);
+        BrowserUtils.wait(driver,1);
         BrowserUtils.actionPressEnter(driver);
     }
 
     public void selectAge(String age, By locator) {
         BrowserUtils.waitForElement(driver, locator);
         BrowserUtils.selectByValue(driver.findElement(locator), age);
+        BrowserUtils.wait(driver, 1);
     }
 
     public void addAnotherTraveler() {
         BrowserUtils.waitForElement(driver, addAnotherTravelerBy);
         BrowserUtils.clickElement(driver.findElement(addAnotherTravelerBy));
+        BrowserUtils.wait(driver, 1);
     }
 
     public void clickNext() {
         BrowserUtils.clickElement(driver.findElement(nextBy));
+        BrowserUtils.wait(driver, 1);
     }
 
     public void selectCalendarDates() {
@@ -56,20 +59,25 @@ public class TravelInsurancePO {
         BrowserUtils.waitForElement(driver, dateFirstBy);
         BrowserUtils.waitForElement(driver, dateSecondBy);
         BrowserUtils.clickElement(driver.findElement(dateFirstBy));
+        BrowserUtils.wait(driver, 1);
         BrowserUtils.clickElement(driver.findElement(dateSecondBy));
+        BrowserUtils.wait(driver, 1);
     }
 
     public void clickProceedButton() {
         BrowserUtils.clickElement(driver.findElement(proceedBy));
+        BrowserUtils.wait(driver, 1);
     }
 
     public void enterMobileNumber(String mobileNumber) {
         BrowserUtils.waitForElement(driver, mobileNumberBy);
         BrowserUtils.sendKeys(driver.findElement(mobileNumberBy), mobileNumber);
+        BrowserUtils.wait(driver, 1);
     }
 
     public void clickViewPlans() {
         BrowserUtils.clickElement(driver.findElement(viewPlansBy));
+        BrowserUtils.wait(driver, 1);
     }
 
     public void selectPriceOption(String selectOption) {
