@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class CarInsurancePO {
     public static WebDriver driver = null;
-    private static By ProceedWithoutCarNumber = By.xpath("//*[@id=\"before-tp\"]/div[2]/a");
+    private static By ProceedWithoutCarNumber = By.xpath("//*[contains(text(), 'Proceed')]");
 
     public CarInsurancePO(WebDriver driver){
         this.driver = driver;

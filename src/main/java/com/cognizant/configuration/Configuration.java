@@ -2,6 +2,7 @@ package com.cognizant.configuration;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputFilter;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,8 +11,8 @@ import java.util.Properties;
 public class Configuration {
     private static final Path configFilePath = Path.of("config.properties");
     // Path to WebDrivers executable
-    private static final String webDPath = Path.of(
-            Path.of("").toAbsolutePath().toString(),"\\webdrivers").toString();
+    private static final String absPath = Path.of(".").toString();
+    private static final String webDPath = Path.of(".\\webdrivers").toString();
 
     private static final Properties prop = new Properties();
 
@@ -27,7 +28,6 @@ public class Configuration {
             }
         }
         try (OutputStream out = Files.newOutputStream(configFilePath)) {
-            String absPath = Path.of("").toAbsolutePath().toString();
             prop.setProperty("baseUrl", "https://www.policybazaar.com/");
             prop.setProperty("edgeDriverPath", webDPath + "\\edgedriver_win64\\msedgedriver.exe");
             prop.setProperty("chromeDriverPath", webDPath + "\\chromedriver_win32\\chromedriver.exe");
@@ -35,10 +35,14 @@ public class Configuration {
             prop.setProperty("firefoxDriverPath", webDPath + "\\geckodriver-v0.29.1-win64\\geckodriver.exe");
             prop.setProperty("screenshotPath",  absPath + "\\screenshots");
             prop.setProperty("excelFilePath", absPath + "\\src\\main\\resources\\InputData.xlsx");
-            prop.store(out, "Student Insurance Registration");
+            prop.store(out, "Student Insurance Registration Configurations");
         } catch (IOException exp) {
             exp.printStackTrace();
         }
+    }
+
+    public static boolean checkIfNotExists(Path filePath) {
+        return Files.notExists(filePath);
     }
 
     /**
@@ -47,6 +51,9 @@ public class Configuration {
      * @return Value for the the given key parameter.
      */
     public static String getProperty(String key) {
+        if (checkIfNotExists(configFilePath)) {
+            Configuration.createConfigurations();
+        }
         String value = null;
         try (InputStream in = Files.newInputStream(configFilePath)) {
             prop.load(in);
@@ -55,14 +62,6 @@ public class Configuration {
             e.printStackTrace();
         }
         return value;
-    }
-
-    /**
-     * @hidden
-     * @return File path of Configuration file.
-     */
-    public static Path getConfigFilePath() {
-        return configFilePath;
     }
 }
 
