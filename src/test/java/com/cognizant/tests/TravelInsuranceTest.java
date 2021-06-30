@@ -7,6 +7,8 @@ import com.cognizant.apachePOI.ReadExcel;
 import com.cognizant.configuration.Configuration;
 import com.cognizant.homepage.HomePagePO;
 import com.cognizant.travelinsurance.TravelInsurancePO;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.testng.Reporter;
@@ -85,6 +87,12 @@ public class TravelInsuranceTest extends TestBase{
         } catch (IOException e) {
             Reporter.log("Screenshot file path is not set correctly");
             throw new SkipException("Screenshot file path is not set correctly");
+        } catch (TimeoutException e) {
+            Reporter.log("WebDriver timeout. Failed to locate a web element.");
+            throw new SkipException("WebDriver timeout. Failed to locate a web element.");
+        } catch (NoSuchElementException e) {
+            Reporter.log("Failed to locate a WebElement object.");
+            throw new SkipException("Failed to locate a WebElement object");
         }
     }
 
