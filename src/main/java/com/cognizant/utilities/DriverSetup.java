@@ -4,9 +4,7 @@ import com.cognizant.configuration.Configuration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -15,12 +13,12 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.sql.Driver;
-import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
+/**
+ * This class is used to create and manage the WebDriver instance,
+ * which is used to perform test automations.
+ */
 public class DriverSetup {
     // local variables
     private static DriverSetup instance = null;
@@ -54,7 +52,7 @@ public class DriverSetup {
      * @param browser       Browser name for which driver instance is set for. Currently supported
      *                      browsers {@code chrome}, {@code edge}, {@code firefox}.
      * @param platform      Operating system, on which automation would run.
-     * @param environment   Takes two values - {@code local} for running automation locally and
+     * @param environment   Takes either of two values - {@code local} for running automation locally and
      *                      {@code remote} for running instance using Selenium Grid.
      * @param optPreference Optional browser configuration parameters.
      * @throws WebDriverException If a browser is not installed on the system.
