@@ -100,14 +100,10 @@ public class BrowserUtils {
         jse.executeScript("window.scrollBy(0,"+ scrollingUnit+ ")");
     }
 
-    public static void screenshot(WebDriver driver, String filePath) {
+    public static void screenshot(WebDriver driver, String filePath) throws IOException{
         File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        try {
-            Files.deleteIfExists(Path.of(filePath));
-            Files.copy(srcFile.toPath(), Path.of(filePath));
-        } catch (IOException exp) {
-            exp.printStackTrace();
-        }
+        Files.deleteIfExists(Path.of(filePath));
+        Files.copy(srcFile.toPath(), Path.of(filePath));
     }
 
     public static String getBrowserName(WebDriver driver) {

@@ -2,6 +2,7 @@ package com.cognizant.utilities;
 
 import com.cognizant.configuration.Configuration;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -49,10 +50,12 @@ public class DriverSetup {
                                 String platform,// linux, win, mac
                                 String environment,// local, remote, sauce labs
                                 Map<String, Object>... optPreference)
+            throws WebDriverException // when a browser is not installed
     {
-        // driver preferences are set using this variable
+        // browser configurations are set using this type
         DesiredCapabilities caps = null;
-        String ffVersion = "55.0"; // firefox version
+
+        // localhost URL for selenium grid
         String remoteHubURL = "http://localhost:4444/wd/hub";
 
         switch (browser.toLowerCase()) {
