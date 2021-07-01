@@ -14,19 +14,21 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
+//Class to read input from Excel files for Travel Insurance page
 public class ReadExcel {
+    //declaring required variables
     private Path filePath;
     private XSSFWorkbook workbook = null;
     private int sheetIndex;
     private DataFormatter formatter = null;
-
+    //public constructor which sets the filePath and sheetIndex
     public ReadExcel(int sheetIndex){
         this.filePath = Path.of(Configuration.getProperty("excelFilePath"));
         this.sheetIndex=sheetIndex;
         readExcelFile();
         formatter = new DataFormatter();
     }
-
+    //fetching the excel file path
     private void readExcelFile() {
         try (InputStream in = Files.newInputStream(filePath)) {
             workbook = new XSSFWorkbook(in);
@@ -34,7 +36,7 @@ public class ReadExcel {
             e.printStackTrace();
         }
     }
-
+    //closing the Excel workbook
     public void closeWorkbook() {
         try {
             workbook.close();
@@ -78,7 +80,7 @@ public class ReadExcel {
         }
         return completeSheetData;
     }
-
+    //Fetching sheet 1 in the workbook, that is, TravelInsurance
     public Map<String,String> getTravelInsuranceData(int sheetIndex) {
         this.sheetIndex = sheetIndex;
         Map<String,String> map =  getExcelAsMap().get("1");

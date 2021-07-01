@@ -6,13 +6,13 @@
 
 <!--&lt;!&ndash;    Google Chrome tests configurations&ndash;&gt;-->
 <!--    <parameter name="browser" value="chrome" />-->
-<!--    <parameter name="platform" value="Windows 10" />-->
-<!--    <parameter name="environment" value="local" />-->
-<!--    <test name="ChromeTest">-->
-<!--        <packages>-->
-<!--            <package name="com.cognizant.tests" />-->
-<!--        </packages>-->
-<!--    </test>-->
+    <parameter name="platform" value="Windows 10" />
+    <parameter name="environment" value="local" />
+    <test name="ChromeTest">
+        <packages>
+            <package name="com.cognizant.tests" />
+        </packages>
+    </test>
 
 <!--&lt;!&ndash;    Microsoft Edge Browser tests configurations&ndash;&gt;-->
 <!--    <parameter name="browser" value="edge" />-->
@@ -25,14 +25,14 @@
 <!--    </test>-->
 
 <!--    Firefox Browser Tests configurations-->
-    <parameter name="browser" value="firefox" />
-    <parameter name="platform" value="Windows 10" />
-    <parameter name="environment" value="local" />
-    <test name="Firefox">
-        <packages>
-            <package name="com.cognizant.tests" />
-        </packages>
-    </test>
+<!--    <parameter name="browser" value="firefox" />-->
+<!--    <parameter name="platform" value="Windows 10" />-->
+<!--    <parameter name="environment" value="local" />-->
+<!--    <test name="Firefox">-->
+<!--        <packages>-->
+<!--            <package name="com.cognizant.tests" />-->
+<!--        </packages>-->
+<!--    </test>-->
 
 <!--    Listener class configurations-->
     <listeners>
