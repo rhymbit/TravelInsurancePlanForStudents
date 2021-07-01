@@ -1,5 +1,9 @@
 package com.cognizant.utilities;
 
+/**
+ * This class is used to set some global variables in case user doesn't provide
+ * some necessary variables. At that time these variables would be accepted as defaults.
+ */
 public class Global_VARS {
     public static final String BROWSER = "chrome";
     public static final String PLATFORM = "Windows 10";

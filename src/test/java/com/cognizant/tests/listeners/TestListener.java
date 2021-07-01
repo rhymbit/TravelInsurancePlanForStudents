@@ -7,6 +7,9 @@ import org.testng.TestListenerAdapter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * TestNG listener class to use with Jenkins and Cucumber.
+ */
 public class TestListener extends TestListenerAdapter {
     @Override
     public void onStart(ITestContext testContext) {

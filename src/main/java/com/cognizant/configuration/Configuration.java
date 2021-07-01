@@ -2,12 +2,15 @@ package com.cognizant.configuration;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.ObjectInputFilter;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Properties;
 
+/**
+ * This class creates and sets the configuration parameters in a {@code config.properties} file
+ * inside the root directory. These configurations are required for running tests.
+ */
 public class Configuration {
     private static final Path configFilePath = Path.of("config.properties");
     // Path to WebDrivers executable
@@ -41,6 +44,11 @@ public class Configuration {
         }
     }
 
+    /**
+     * Helper method to check for if a file is present at a give path.
+     * @param filePath FilePath to check for existence.
+     * @return
+     */
     public static boolean checkIfNotExists(Path filePath) {
         return Files.notExists(filePath);
     }

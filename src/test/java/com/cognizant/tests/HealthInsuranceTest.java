@@ -14,7 +14,7 @@ import java.util.List;
 public class HealthInsuranceTest extends TestBase{
     private WebDriver driver;
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void HealthInsurance() {
         HomePagePO homepage = new HomePagePO(driver);
         // open homepage url
