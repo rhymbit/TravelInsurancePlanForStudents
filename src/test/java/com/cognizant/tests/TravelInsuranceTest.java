@@ -48,7 +48,7 @@ public class TravelInsuranceTest extends TestBase{
     private String priceFilterCondition = "Price: Low to High";
 
     /**
-     * Method to simulate travel insurance tests on policybazar.com
+     * Method to simulate travel insurance tests on policybazaar.com
      */
     @Test(enabled = true)
     public void testSearchCountry() {
@@ -130,7 +130,9 @@ public class TravelInsuranceTest extends TestBase{
         readExcel = new ReadExcel(0);
         travelData = readExcel.getTravelInsuranceData(0);
     }
-
+    /**
+     * This method closes the workbook as well as browser windows.
+     */
     @Override
     @AfterClass
     protected void testClassTearDown() {

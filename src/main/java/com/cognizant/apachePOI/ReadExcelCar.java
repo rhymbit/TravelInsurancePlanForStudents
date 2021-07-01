@@ -1,5 +1,7 @@
 package com.cognizant.apachePOI;
+import com.cognizant.configuration.Configuration;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -7,24 +9,51 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
+/**
+ * This Class reads input for Car Insurance web page from Excel file.
+ **/
 public class ReadExcelCar {
-    //declaring class level variables and constructor to set filepath and sheetIndex
-    private String filePath;
+
+    //declaring required variables
+    private Path filePath;
+    private XSSFWorkbook workbook = null;
     private int sheetIndex;
-    public ReadExcelCar(String filePath, int sheetIndex){
-        this.filePath=filePath;
+    private DataFormatter formatter = null;
+    //public constructor which sets the filePath and sheetIndex
+    public ReadExcelCar(int sheetIndex){
+        this.filePath = Path.of(Configuration.getProperty("excelFilePath"));
         this.sheetIndex=sheetIndex;
+        readExcelFile();
+        formatter = new DataFormatter();
+    }
+    //fetching the excel file path
+    private void readExcelFile() {
+        try (InputStream in = Files.newInputStream(filePath)) {
+            workbook = new XSSFWorkbook(in);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    //closing the Excel workbook
+    public void closeWorkbook() {
+        try {
+            workbook.close();
+        } catch (IOException exp) {
+            exp.printStackTrace();
+        }
     }
     //this method returns desired sheet based on sheet index
-    private XSSFSheet getSheet() throws IOException {
-        FileInputStream readFile= new FileInputStream(filePath);
-        XSSFWorkbook workbook=new XSSFWorkbook(readFile);
-        XSSFSheet sheet=workbook.getSheetAt(sheetIndex);
+    private XSSFSheet getSheet() {
+        XSSFSheet sheet = workbook.getSheetAt(sheetIndex);
         return sheet;
     }
+
     //this methods reads Excel data in map
-    public Map<String, Map<String, String>> getExcelAsMap() throws IOException {
+    public Map<String, Map<String, String>> getExcelAsMap() {
         XSSFSheet sheet= getSheet();
         //creating nested hashmap for fetching excel data
         Map<String, Map<String, String>> completeSheetData = new HashMap<String, Map<String, String>>();
@@ -37,23 +66,27 @@ public class ReadExcelCar {
             columnHeader.add(cellIterator.next().getStringCellValue());
         }
         //nested loop to iterate over each row and each cell
-        //int rowCount = row.getLastCellNum();
+
         int rowCount=1;
-        //System.out.println(rowCount);
         int columnCount = 7;
-        //System.out.println(columnCount);
+
         for (int i = 1; i <= rowCount; i++) {
             Map<String, String> singleRowData = new HashMap<String, String>();
             Row row1 = sheet.getRow(i);
             for (int j = 0; j < columnCount; j++) {
                 Cell cell = row1.getCell(j);
-                singleRowData.put(columnHeader.get(j), cell.toString());
+                String text = formatter.formatCellValue(cell);
+                singleRowData.put(columnHeader.get(j), text);
             }
             completeSheetData.put(String.valueOf(i), singleRowData);
         }
         return completeSheetData;
     }
-
-
-
+    //Fetching sheet 1 in the workbook, that is, TravelInsurance
+    public Map<String,String> getCarInsuranceData(int sheetIndex) {
+        this.sheetIndex = sheetIndex;
+        Map<String,String> map =  getExcelAsMap().get("1");
+        return map;
+    }
 }
+
