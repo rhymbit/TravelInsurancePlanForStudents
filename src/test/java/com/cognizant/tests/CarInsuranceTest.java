@@ -6,23 +6,20 @@ import com.cognizant.carinsurance.CarInsurancePage2;
 import com.cognizant.configuration.Configuration;
 import com.cognizant.homepage.HomePagePO;
 import com.cognizant.utilities.BrowserUtils;
-import com.cognizant.utilities.DriverSetup;
 import com.cognizant.utilities.Global_VARS;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.testng.Reporter;
 import org.testng.SkipException;
 import org.testng.annotations.*;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.util.Map;
 
 public class CarInsuranceTest extends TestBase {
-    private WebDriver driver;
+//    private WebDriver driver;
     private String browserName;
     private String screenShotPath;
     protected Map<String,String> carData = null;
@@ -140,18 +137,7 @@ public class CarInsuranceTest extends TestBase {
         Global_VARS.DEF_PLATFORM = System.getProperty("platform", platform);
         Global_VARS.DEF_ENVIRONMENT = System.getProperty("environment", environment);
 
-        try {
-            DriverSetup driverSetup = new DriverSetup();
-            driverSetup.setDriver(Global_VARS.DEF_BROWSER,
-                    Global_VARS.DEF_PLATFORM,
-                    Global_VARS.DEF_ENVIRONMENT);
-            driver = driverSetup.getDriver();
-        } catch (MalformedURLException e) {
-            Reporter.log("Selenium grid's Hub URL is not set properly, or is not working");
-        }
-
         browserName = browser;
-        //new refactored
         ReadExcelCar readExcel = new ReadExcelCar(1);
         carData = readExcel.getCarInsuranceData(1);
     }
@@ -161,7 +147,6 @@ public class CarInsuranceTest extends TestBase {
      */
     @AfterClass
     protected void testClassTearDown() {
-        //readExcel.closeWorkbook();
         try {
             driver.close();
             driver.quit();

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-PolicyBazarTests" class="navigator-link">
+              <span class="suite-name border-skipped">PolicyBazarTests</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-PolicyBazarTests" class="navigator-link ">
+                    <span>C:\Users\prateek_parashar\code\Hackathon\StudentSubmission\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-PolicyBazarTests" class="navigator-link ">
+                    <span class="test-stats">3 tests</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-PolicyBazarTests" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-PolicyBazarTests" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-PolicyBazarTests" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-PolicyBazarTests" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-PolicyBazarTests" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">9 methods,  1 skipped,  8 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-PolicyBazarTests" class="hide-methods skipped suite-PolicyBazarTests"> (hide)</a> <!-- hide-methods skipped suite-PolicyBazarTests -->
+                      <a href="#" panel-name="suite-PolicyBazarTests" class="show-methods skipped suite-PolicyBazarTests"> (show)</a> <!-- show-methods skipped suite-PolicyBazarTests -->
+                    </span>
+                    <div class="method-list-content skipped suite-PolicyBazarTests">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-PolicyBazarTests" title="com.cognizant.tests.TravelInsuranceTest" class="method navigator-link" hash-for-method="testSearchCountry">testSearchCountry</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-PolicyBazarTests -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-PolicyBazarTests" class="hide-methods passed suite-PolicyBazarTests"> (hide)</a> <!-- hide-methods passed suite-PolicyBazarTests -->
+                      <a href="#" panel-name="suite-PolicyBazarTests" class="show-methods passed suite-PolicyBazarTests"> (show)</a> <!-- show-methods passed suite-PolicyBazarTests -->
+                    </span>
+                    <div class="method-list-content passed suite-PolicyBazarTests">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-PolicyBazarTests" title="com.cognizant.tests.HealthInsuranceTest" class="method navigator-link" hash-for-method="HealthInsurance">HealthInsurance</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-PolicyBazarTests" title="com.cognizant.tests.HealthInsuranceTest" class="method navigator-link" hash-for-method="HealthInsurance">HealthInsurance</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-PolicyBazarTests" title="com.cognizant.tests.HealthInsuranceTest" class="method navigator-link" hash-for-method="HealthInsurance">HealthInsurance</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-PolicyBazarTests" title="com.cognizant.tests.CarInsuranceTest" class="method navigator-link" hash-for-method="testCarInsuranceCase">testCarInsuranceCase</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-PolicyBazarTests" title="com.cognizant.tests.CarInsuranceTest" class="method navigator-link" hash-for-method="testCarInsuranceCase">testCarInsuranceCase</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-PolicyBazarTests" title="com.cognizant.tests.CarInsuranceTest" class="method navigator-link" hash-for-method="testCarInsuranceCase">testCarInsuranceCase</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-PolicyBazarTests" title="com.cognizant.tests.TravelInsuranceTest" class="method navigator-link" hash-for-method="testSearchCountry">testSearchCountry</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-PolicyBazarTests" title="com.cognizant.tests.TravelInsuranceTest" class="method navigator-link" hash-for-method="testSearchCountry">testSearchCountry</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-PolicyBazarTests -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-PolicyBazarTests" class="panel PolicyBazarTests">
+          <div class="suite-PolicyBazarTests-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.cognizant.tests.TravelInsuranceTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSearchCountry">
+                  </a> <!-- testSearchCountry -->
+                  <span class="method-name">testSearchCountry</span>
+                  <div class="stack-trace"><b>"org.testng.SkipException: WebDriver timeout. Failed to locate a web element.
+	at com.cognizant.tests.TravelInsuranceTest.testSearchCountry(TravelInsuranceTest.java:89)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+... Removed 16 stack frames<br/> org.testng.SkipException: WebDriver timeout. Failed to locate a web element.
+	at com.cognizant.tests.TravelInsuranceTest.testSearchCountry(TravelInsuranceTest.java:89)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+"</b><br>com.cognizant.tests.TravelInsuranceTest.testSearchCountry(TravelInsuranceTest.java:89)<br>java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)<br>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>java.base/java.lang.reflect.Method.invoke(Method.java:567)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:767)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.access$000(SuiteRunner.java:37)<br>org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)<br>org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)<br>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)<br>java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)<br>java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)<br>java.base/java.lang.Thread.run(Thread.java:831)<br>
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-PolicyBazarTests-class-skipped -->
+          <div class="suite-PolicyBazarTests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.cognizant.tests.TravelInsuranceTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSearchCountry">
+                  </a> <!-- testSearchCountry -->
+                  <span class="method-name">testSearchCountry</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSearchCountry">
+                  </a> <!-- testSearchCountry -->
+                  <span class="method-name">testSearchCountry</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-PolicyBazarTests-class-passed -->
+          <div class="suite-PolicyBazarTests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.cognizant.tests.HealthInsuranceTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="HealthInsurance">
+                  </a> <!-- HealthInsurance -->
+                  <span class="method-name">HealthInsurance</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="HealthInsurance">
+                  </a> <!-- HealthInsurance -->
+                  <span class="method-name">HealthInsurance</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="HealthInsurance">
+                  </a> <!-- HealthInsurance -->
+                  <span class="method-name">HealthInsurance</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-PolicyBazarTests-class-passed -->
+          <div class="suite-PolicyBazarTests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.cognizant.tests.CarInsuranceTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCarInsuranceCase">
+                  </a> <!-- testCarInsuranceCase -->
+                  <span class="method-name">testCarInsuranceCase</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCarInsuranceCase">
+                  </a> <!-- testCarInsuranceCase -->
+                  <span class="method-name">testCarInsuranceCase</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCarInsuranceCase">
+                  </a> <!-- testCarInsuranceCase -->
+                  <span class="method-name">testCarInsuranceCase</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-PolicyBazarTests-class-passed -->
+        </div> <!-- panel PolicyBazarTests -->
+        <div panel-name="test-xml-PolicyBazarTests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\prateek_parashar\code\Hackathon\StudentSubmission\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;4&quot; parallel=&quot;tests&quot; name=&quot;PolicyBazarTests&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.cognizant.tests.listeners.TestListener&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test name=&quot;ChromeTest&quot;&gt;
+    &lt;parameter name=&quot;environment&quot; value=&quot;local&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+    &lt;parameter name=&quot;platform&quot; value=&quot;Windows 10&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.cognizant.tests.TestBase&quot;/&gt;
+      &lt;class name=&quot;com.cognizant.tests.CarInsuranceTest&quot;/&gt;
+      &lt;class name=&quot;com.cognizant.tests.TravelInsuranceTest&quot;/&gt;
+      &lt;class name=&quot;com.cognizant.tests.HealthInsuranceTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- ChromeTest --&gt;
+  &lt;test name=&quot;EdgeTest&quot;&gt;
+    &lt;parameter name=&quot;environment&quot; value=&quot;local&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;edge&quot;/&gt;
+    &lt;parameter name=&quot;platform&quot; value=&quot;Windows 10&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.cognizant.tests.TestBase&quot;/&gt;
+      &lt;class name=&quot;com.cognizant.tests.HealthInsuranceTest&quot;/&gt;
+      &lt;class name=&quot;com.cognizant.tests.CarInsuranceTest&quot;/&gt;
+      &lt;class name=&quot;com.cognizant.tests.TravelInsuranceTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- EdgeTest --&gt;
+  &lt;test name=&quot;FirefoxTest&quot;&gt;
+    &lt;parameter name=&quot;environment&quot; value=&quot;local&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
+    &lt;parameter name=&quot;platform&quot; value=&quot;Windows 10&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.cognizant.tests.TestBase&quot;/&gt;
+      &lt;class name=&quot;com.cognizant.tests.HealthInsuranceTest&quot;/&gt;
+      &lt;class name=&quot;com.cognizant.tests.CarInsuranceTest&quot;/&gt;
+      &lt;class name=&quot;com.cognizant.tests.TravelInsuranceTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- FirefoxTest --&gt;
+&lt;/suite&gt; &lt;!-- PolicyBazarTests --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-PolicyBazarTests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for PolicyBazarTests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">ChromeTest (4 classes)</span>
+              </li>
+              <li>
+                <span class="test-name">EdgeTest (4 classes)</span>
+              </li>
+              <li>
+                <span class="test-name">FirefoxTest (4 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-PolicyBazarTests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for PolicyBazarTests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-PolicyBazarTests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for PolicyBazarTests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_PolicyBazarTests');
+function tableData_PolicyBazarTests() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(9);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testCarInsuranceCase')
+data.setCell(0, 2, 'com.cognizant.tests.CarInsuranceTest')
+data.setCell(0, 3, 26256);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testCarInsuranceCase')
+data.setCell(1, 2, 'com.cognizant.tests.CarInsuranceTest')
+data.setCell(1, 3, 23645);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testSearchCountry')
+data.setCell(2, 2, 'com.cognizant.tests.TravelInsuranceTest')
+data.setCell(2, 3, 21355);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testCarInsuranceCase')
+data.setCell(3, 2, 'com.cognizant.tests.CarInsuranceTest')
+data.setCell(3, 3, 20835);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testSearchCountry')
+data.setCell(4, 2, 'com.cognizant.tests.TravelInsuranceTest')
+data.setCell(4, 3, 15979);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testSearchCountry')
+data.setCell(5, 2, 'com.cognizant.tests.TravelInsuranceTest')
+data.setCell(5, 3, 11853);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'HealthInsurance')
+data.setCell(6, 2, 'com.cognizant.tests.HealthInsuranceTest')
+data.setCell(6, 3, 6832);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'HealthInsurance')
+data.setCell(7, 2, 'com.cognizant.tests.HealthInsuranceTest')
+data.setCell(7, 3, 6642);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'HealthInsurance')
+data.setCell(8, 2, 'com.cognizant.tests.HealthInsuranceTest')
+data.setCell(8, 3, 3940);
+window.suiteTableData['PolicyBazarTests']= { tableData: data, tableDiv: 'times-div-PolicyBazarTests'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <div id="times-div-PolicyBazarTests">
+              </div> <!-- times-div-PolicyBazarTests -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-PolicyBazarTests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for PolicyBazarTests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">HealthInsurance</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Family Health Insurance</span>
+                <span class="reporter-method-output">Senior Citizen Health Insurance</span>
+                <span class="reporter-method-output">Coronavirus Health Insurance</span>
+                <span class="reporter-method-output">Corona Kavach Policy</span>
+                <span class="reporter-method-output">Corona Rakshak Policy</span>
+                <span class="reporter-method-output">Arogya Sanjeevani Policy</span>
+                <span class="reporter-method-output">Critical Illness Insurance</span>
+                <span class="reporter-method-output">Mediclaim Policy</span>
+                <span class="reporter-method-output">Best Health Insurance Plans</span>
+                <span class="reporter-method-output">Health Insurance Claim</span>
+                <span class="reporter-method-output">Health Insurance Calculator</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">HealthInsurance</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Family Health Insurance</span>
+                <span class="reporter-method-output">Senior Citizen Health Insurance</span>
+                <span class="reporter-method-output">Coronavirus Health Insurance</span>
+                <span class="reporter-method-output">Corona Kavach Policy</span>
+                <span class="reporter-method-output">Corona Rakshak Policy</span>
+                <span class="reporter-method-output">Arogya Sanjeevani Policy</span>
+                <span class="reporter-method-output">Critical Illness Insurance</span>
+                <span class="reporter-method-output">Mediclaim Policy</span>
+                <span class="reporter-method-output">Best Health Insurance Plans</span>
+                <span class="reporter-method-output">Health Insurance Claim</span>
+                <span class="reporter-method-output">Health Insurance Calculator</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">HealthInsurance</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Family Health Insurance</span>
+                <span class="reporter-method-output">Senior Citizen Health Insurance</span>
+                <span class="reporter-method-output">Coronavirus Health Insurance</span>
+                <span class="reporter-method-output">Corona Kavach Policy</span>
+                <span class="reporter-method-output">Corona Rakshak Policy</span>
+                <span class="reporter-method-output">Arogya Sanjeevani Policy</span>
+                <span class="reporter-method-output">Critical Illness Insurance</span>
+                <span class="reporter-method-output">Mediclaim Policy</span>
+                <span class="reporter-method-output">Best Health Insurance Plans</span>
+                <span class="reporter-method-output">Health Insurance Claim</span>
+                <span class="reporter-method-output">Health Insurance Calculator</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">testSearchCountry</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">WebDriver timeout. Failed to locate a web element.</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-PolicyBazarTests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">6 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.cognizant.tests.HealthInsuranceTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">suiteTearDown</span>
+                <br/>
+                <span class="ignored-method-name">suiteTearDown</span>
+                <br/>
+                <span class="ignored-method-name">suiteTearDown</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.cognizant.tests.CarInsuranceTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">suiteTearDown</span>
+                <br/>
+                <span class="ignored-method-name">suiteTearDown</span>
+                <br/>
+                <span class="ignored-method-name">suiteTearDown</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-PolicyBazarTests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.cognizant.tests.HealthInsuranceTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">suiteSetup(firefox, Windows 10, local)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.cognizant.tests.CarInsuranceTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">suiteSetup(chrome, Windows 10, local)</span>
+                <span class="method-start">30 ms</span>
+              </div> <!-- configuration-class before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.cognizant.tests.HealthInsuranceTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">suiteSetup(edge, Windows 10, local)</span>
+                <span class="method-start">31 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">testClassSetup(firefox, Windows 10, local)</span>
+                <span class="method-start">4620 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">HealthInsurance</span>
+                <span class="method-start">4625 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class before">
+                <span class="method-name">testClassSetup(edge, Windows 10, local)</span>
+                <span class="method-start">4638 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">HealthInsurance</span>
+                <span class="method-start">4640 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.cognizant.tests.CarInsuranceTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">testClassSetup(chrome, Windows 10, local)</span>
+                <span class="method-start">4654 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testCarInsuranceCase</span>
+                <span class="method-start">7301 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.cognizant.tests.HealthInsuranceTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class after">
+                <span class="method-name">testClassTearDown</span>
+                <span class="method-start">11268 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
+                <span class="method-name">testClassTearDown</span>
+                <span class="method-start">11473 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.cognizant.tests.CarInsuranceTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">suiteSetup(firefox, Windows 10, local)</span>
+                <span class="method-start">14464 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">suiteSetup(edge, Windows 10, local)</span>
+                <span class="method-start">16291 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">testClassSetup(edge, Windows 10, local)</span>
+                <span class="method-start">18650 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testCarInsuranceCase</span>
+                <span class="method-start">18721 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class before">
+                <span class="method-name">testClassSetup(firefox, Windows 10, local)</span>
+                <span class="method-start">22169 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testCarInsuranceCase</span>
+                <span class="method-start">22246 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">testClassTearDown</span>
+                <span class="method-start">33557 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.cognizant.tests.TravelInsuranceTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">suiteSetup(chrome, Windows 10, local)</span>
+                <span class="method-start">37138 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">testClassSetup(chrome, Windows 10, local)</span>
+                <span class="method-start">39590 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testSearchCountry</span>
+                <span class="method-start">39640 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.cognizant.tests.CarInsuranceTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class after">
+                <span class="method-name">testClassTearDown</span>
+                <span class="method-start">42367 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
+                <span class="method-name">testClassTearDown</span>
+                <span class="method-start">43082 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.cognizant.tests.TravelInsuranceTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">suiteSetup(firefox, Windows 10, local)</span>
+                <span class="method-start">45128 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">suiteSetup(edge, Windows 10, local)</span>
+                <span class="method-start">51008 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">testClassSetup(firefox, Windows 10, local)</span>
+                <span class="method-start">51618 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testSearchCountry</span>
+                <span class="method-start">51691 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class before">
+                <span class="method-name">testClassSetup(edge, Windows 10, local)</span>
+                <span class="method-start">55222 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testSearchCountry</span>
+                <span class="method-start">55268 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">testClassTearDown</span>
+                <span class="method-start">55620 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.cognizant.tests.HealthInsuranceTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">suiteSetup(chrome, Windows 10, local)</span>
+                <span class="method-start">64673 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">testClassSetup(chrome, Windows 10, local)</span>
+                <span class="method-start">66116 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">HealthInsurance</span>
+                <span class="method-start">66117 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.cognizant.tests.TravelInsuranceTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class after">
+                <span class="method-name">testClassTearDown</span>
+                <span class="method-start">67121 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.cognizant.tests.HealthInsuranceTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class after">
+                <span class="method-name">testClassTearDown</span>
+                <span class="method-start">70057 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.cognizant.tests.TravelInsuranceTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class after">
+                <span class="method-name">testClassTearDown</span>
+                <span class="method-start">73046 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-suite after">
+                <span class="method-name">suiteTearDown</span>
+                <span class="method-start">74766 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

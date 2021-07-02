@@ -11,9 +11,9 @@
         <parameter name="environment" value="local" />
         <classes>
             <class name="com.cognizant.tests.TestBase" />
-            <class name="com.cognizant.tests.HealthInsuranceTest" />
             <class name="com.cognizant.tests.CarInsuranceTest" />
             <class name="com.cognizant.tests.TravelInsuranceTest" />
+            <class name="com.cognizant.tests.HealthInsuranceTest" />
         </classes>
     </test>
 

@@ -38,7 +38,7 @@ public class HomePagePO {
      */
     public void openHomePage() {
         baseUrl = Configuration.getProperty("baseUrl");
-        BrowserUtils.gotoUrl(driver, baseUrl);
+        this.driver = BrowserUtils.gotoUrl(driver, baseUrl);
         BrowserUtils.wait(driver, 0);
     }
 
