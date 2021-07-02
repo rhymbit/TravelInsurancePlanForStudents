@@ -5,6 +5,10 @@ import com.cognizant.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+/**
+ * This class contains methods and properties required to book travelel insurance plan
+ * for 2 students, as per project requirements.
+ */
 public class TravelInsurancePO {
     // Browser automating WebDriver object
     public WebDriver driver = null;
@@ -45,6 +49,7 @@ public class TravelInsurancePO {
         BrowserUtils.sendKeys(driver.findElement(searchCountryBy), country);
         BrowserUtils.wait(driver,1);
         BrowserUtils.actionPressEnter(driver);
+        BrowserUtils.wait(driver,1);
     }
 
     /**

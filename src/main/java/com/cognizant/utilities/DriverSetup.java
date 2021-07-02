@@ -6,8 +6,6 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -28,21 +26,12 @@ public class DriverSetup {
     private ThreadLocal<String> sessionVersion = new ThreadLocal<>();
     private String getEnv;
 
-    // Private constructor for singleton class
-    private DriverSetup() {
+    /**
+     * @hidden
+     */
+    public DriverSetup() {
     }
 
-    /**
-     * This method returns a singleton instance of the DriverSetup type.
-     *
-     * @return DriverSetup
-     */
-    public static DriverSetup getInstance() {
-        if (instance == null) {
-            instance = new DriverSetup();
-        }
-        return instance;
-    }
 
     /**
      * Used to set the WebDriver instance to be used for automation. Set's the
@@ -57,7 +46,7 @@ public class DriverSetup {
      * @param optPreference Optional browser configuration parameters.
      * @throws WebDriverException If a browser is not installed on the system.
      */
-    public final void setDriver(String browser,// chrome, edge, firefox
+    public void setDriver(String browser,// chrome, edge, firefox
                                 String platform,// linux, win, mac
                                 String environment,// local, remote, sauce labs
                                 Map<String, Object>... optPreference)
@@ -74,20 +63,20 @@ public class DriverSetup {
             case "firefox":
                 // setup the browser preference and capabilities
                 caps = DesiredCapabilities.firefox();
-
-                FirefoxOptions ffOpts = new FirefoxOptions();
-                FirefoxProfile ffProfile = new FirefoxProfile();
-
-                ffProfile.setPreference("browser.autofocus", true);
-                ffProfile.setPreference("browser.tabs.remote.autostart.2", false);
-
-                caps.setCapability(FirefoxDriver.PROFILE, ffProfile);
-                caps.setCapability("marionette", true);
+//
+//                FirefoxOptions ffOpts = new FirefoxOptions();
+//                FirefoxProfile ffProfile = new FirefoxProfile();
+//
+//                ffProfile.setPreference("browser.autofocus", true);
+//                ffProfile.setPreference("browser.tabs.remote.autostart.2", false);
+//
+//                caps.setCapability(FirefoxDriver.PROFILE, ffProfile);
+//                caps.setCapability("marionette", true);
 
                 if (environment.equalsIgnoreCase("local")) {
                     System.setProperty("webdriver.gecko.driver",
                             Configuration.getProperty("firefoxDriverPath"));
-                    driver.set(new FirefoxDriver(ffOpts.merge(caps)));
+                    driver.set(new FirefoxDriver(caps));
                 }
                 break;
 

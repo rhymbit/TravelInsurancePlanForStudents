@@ -2,24 +2,20 @@ package com.cognizant.tests;
 
 import com.cognizant.apachePOI.ReadExcel;
 import com.cognizant.configuration.Configuration;
-import com.cognizant.utilities.DriverSetup;
-import com.cognizant.utilities.Global_VARS;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
-import java.sql.Driver;
-import java.util.Map;
 
+/**
+ * This is an abstract classes for all other test classes.
+ */
 public abstract class TestBase {
-    protected DriverSetup instance;
-    protected WebDriver driver;
+    // private variable
     protected ReadExcel readExcel = null;
-    protected DriverSetup driverSetup = null;
-    protected Map<String,String> carInsuranceData = null;
-    protected abstract void testClassTearDown();
-    protected abstract void testMethodsSetup();
-    protected abstract void testMethodsTearDown();
 
+    /**
+     * This method runs at the start of test suite.
+     * This method creates the necessary configurations required to run the project.
+     */
     @Parameters({"browser", "platform", "environment"})
     @BeforeSuite(alwaysRun = true, enabled = true)
     protected void suiteSetup()
@@ -28,6 +24,10 @@ public abstract class TestBase {
         Configuration.createConfigurations();
     }
 
+    /**
+     * This method runs at the end of test suites.
+     * It is used for cleanup work after tests executions.
+     */
     @AfterSuite(alwaysRun = true)
     protected void suiteTearDown() {
     }

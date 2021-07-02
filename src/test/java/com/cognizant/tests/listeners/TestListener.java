@@ -11,6 +11,11 @@ import java.util.Date;
  * TestNG listener class to use with Jenkins and Cucumber.
  */
 public class TestListener extends TestListenerAdapter {
+
+    /**
+     * @hidden
+     * @param testContext
+     */
     @Override
     public void onStart(ITestContext testContext) {
         try {
@@ -24,6 +29,10 @@ public class TestListener extends TestListenerAdapter {
         super.onStart(testContext);
     }
 
+    /**
+     * @hidden
+     * @param testContext
+     */
     @Override
     public void onFinish(ITestContext testContext) {
         try {
@@ -40,6 +49,10 @@ public class TestListener extends TestListenerAdapter {
         super.onFinish(testContext);
     }
 
+    /**
+     * @hidden
+     * @param tr
+     */
     @Override
     public void onTestSuccess(ITestResult tr) {
         try {
@@ -56,6 +69,7 @@ public class TestListener extends TestListenerAdapter {
     }
 
     /**
+     * @hidden
      * log - method to log data to standard out or logfile
      * @param date
      * @param dataLine
@@ -66,8 +80,14 @@ public class TestListener extends TestListenerAdapter {
 //            writeLogFile(logFile, dataLine);
         }
     }
-    public static String logFile = null;
+
     /**
+     * @hidden
+     */
+    public static String logFile = null;
+
+    /**
+     * @hidden
      * log - overloaded method to log data to standard out or logfile
      *
      * @param dataLine

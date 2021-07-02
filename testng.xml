@@ -2,37 +2,46 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <!-- policybazar.com test suite -->
-<suite name="PolicyBazarTests" parallel="tests">
+<suite name="PolicyBazarTests" thread-count="4" parallel="tests">
 
-<!--&lt;!&ndash;    Google Chrome tests configurations&ndash;&gt;-->
-<!--    <parameter name="browser" value="chrome" />-->
-    <parameter name="platform" value="Windows 10" />
-    <parameter name="environment" value="local" />
+<!--    Google Chrome tests configurations-->
     <test name="ChromeTest">
-        <packages>
-            <package name="com.cognizant.tests" />
-        </packages>
+        <parameter name="browser" value="chrome" />
+        <parameter name="platform" value="Windows 10" />
+        <parameter name="environment" value="local" />
+        <classes>
+            <class name="com.cognizant.tests.TestBase" />
+            <class name="com.cognizant.tests.HealthInsuranceTest" />
+            <class name="com.cognizant.tests.CarInsuranceTest" />
+            <class name="com.cognizant.tests.TravelInsuranceTest" />
+        </classes>
     </test>
 
-<!--&lt;!&ndash;    Microsoft Edge Browser tests configurations&ndash;&gt;-->
-<!--    <parameter name="browser" value="edge" />-->
-<!--    <parameter name="platform" value="Windows 10" />-->
-<!--    <parameter name="environment" value="remote" />-->
-<!--    <test name="EdgeTest">-->
-<!--        <packages>-->
-<!--            <package name="com.cognizant.tests" />-->
-<!--        </packages>-->
-<!--    </test>-->
+<!--    Microsoft Edge Browser tests configurations-->
+    <test name="EdgeTest">
+        <parameter name="browser" value="edge" />
+        <parameter name="platform" value="Windows 10" />
+        <parameter name="environment" value="local" />
+        <classes>
+            <class name="com.cognizant.tests.TestBase" />
+            <class name="com.cognizant.tests.HealthInsuranceTest" />
+            <class name="com.cognizant.tests.CarInsuranceTest" />
+            <class name="com.cognizant.tests.TravelInsuranceTest" />
+        </classes>
+    </test>
 
 <!--    Firefox Browser Tests configurations-->
-<!--    <parameter name="browser" value="firefox" />-->
-<!--    <parameter name="platform" value="Windows 10" />-->
-<!--    <parameter name="environment" value="local" />-->
-<!--    <test name="Firefox">-->
-<!--        <packages>-->
-<!--            <package name="com.cognizant.tests" />-->
-<!--        </packages>-->
-<!--    </test>-->
+    <test name="FirefoxTest">
+        <parameter name="browser" value="firefox" />
+        <parameter name="platform" value="Windows 10" />
+        <parameter name="environment" value="local" />
+        <classes>
+            <class name="com.cognizant.tests.TestBase" />
+            <class name="com.cognizant.tests.HealthInsuranceTest" />
+            <class name="com.cognizant.tests.CarInsuranceTest" />
+            <class name="com.cognizant.tests.TravelInsuranceTest" />
+        </classes>
+    </test>
 
 <!--    Listener class configurations-->
     <listeners>
