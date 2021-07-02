@@ -1,13 +1,13 @@
 package com.cognizant.tests;
 
 import com.cognizant.apachePOI.ReadExcelCar;
-import com.cognizant.configuration.Configuration;
-import com.cognizant.homepage.HomePagePO;
 import com.cognizant.carinsurance.CarInsurancePO;
 import com.cognizant.carinsurance.CarInsurancePage2;
+import com.cognizant.configuration.Configuration;
+import com.cognizant.homepage.HomePagePO;
+import com.cognizant.utilities.BrowserUtils;
 import com.cognizant.utilities.DriverSetup;
 import com.cognizant.utilities.Global_VARS;
-import com.cognizant.utilities.BrowserUtils;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -141,14 +141,15 @@ public class CarInsuranceTest extends TestBase {
         Global_VARS.DEF_ENVIRONMENT = System.getProperty("environment", environment);
 
         try {
-            DriverSetup.getInstance().setDriver(Global_VARS.DEF_BROWSER,
+            DriverSetup driverSetup = new DriverSetup();
+            driverSetup.setDriver(Global_VARS.DEF_BROWSER,
                     Global_VARS.DEF_PLATFORM,
                     Global_VARS.DEF_ENVIRONMENT);
+            driver = driverSetup.getDriver();
         } catch (MalformedURLException e) {
             Reporter.log("Selenium grid's Hub URL is not set properly, or is not working");
         }
 
-        driver = DriverSetup.getInstance().getDriver();
         browserName = browser;
         //new refactored
         ReadExcelCar readExcel = new ReadExcelCar(1);
@@ -158,23 +159,16 @@ public class CarInsuranceTest extends TestBase {
     /**
      * This method closes the workbook as well as browser windows.
      */
-    @Override
     @AfterClass
     protected void testClassTearDown() {
         //readExcel.closeWorkbook();
         try {
-            DriverSetup.getInstance().closeDriver(driver);
+            driver.close();
+            driver.quit();
         } catch (WebDriverException e) {
             Reporter.log("Something went wrong with the web driver object when it was being closed.");
         } catch (Exception e) {
             Reporter.log("Something went wrong when closing the web driver object.");
         }
     }
-
-    @Override
-    protected void testMethodsSetup() { }
-
-    @Override
-    @AfterTest
-    protected void testMethodsTearDown() { }
 }

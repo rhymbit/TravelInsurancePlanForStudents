@@ -117,39 +117,32 @@ public class TravelInsuranceTest extends TestBase{
         Global_VARS.DEF_ENVIRONMENT = System.getProperty("environment", environment);
 
         try {
-            DriverSetup.getInstance().setDriver(Global_VARS.DEF_BROWSER,
+            DriverSetup driverSetup = new DriverSetup();
+            driverSetup.setDriver(Global_VARS.DEF_BROWSER,
                     Global_VARS.DEF_PLATFORM,
                     Global_VARS.DEF_ENVIRONMENT);
+            driver = driverSetup.getDriver();
         } catch (MalformedURLException e) {
             Reporter.log("Selenium grid's Hub URL is not set properly, or is not working");
         }
-
-        driver = DriverSetup.getInstance().getDriver();
 
         browserName = browser;
         readExcel = new ReadExcel(0);
         travelData = readExcel.getTravelInsuranceData(0);
     }
     /**
-     * This method closes the workbook as well as browser windows.
+     * Tear down method for closing the WebDriver object and excel workbook file.
      */
-    @Override
     @AfterClass
     protected void testClassTearDown() {
         readExcel.closeWorkbook();
         try {
-            DriverSetup.getInstance().closeDriver(driver);
+            driver.close();
+            driver.quit();
         } catch (WebDriverException e) {
             Reporter.log("Something went wrong with the web driver object when it was being closed.");
         } catch (Exception e) {
             Reporter.log("Something went wrong when closing the web driver object.");
         }
     }
-
-    @Override
-    protected void testMethodsSetup() { }
-
-    @Override
-    @AfterTest
-    protected void testMethodsTearDown() { }
 }

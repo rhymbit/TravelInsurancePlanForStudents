@@ -1,12 +1,13 @@
 package com.cognizant.homepage;
 
 import com.cognizant.carinsurance.CarInsurancePO;
-import com.cognizant.utilities.BrowserUtils;
 import com.cognizant.configuration.Configuration;
 import com.cognizant.travelinsurance.TravelInsurancePO;
+import com.cognizant.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import java.util.List;
 
 /**

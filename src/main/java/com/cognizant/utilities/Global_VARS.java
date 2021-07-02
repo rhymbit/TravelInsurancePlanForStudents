@@ -1,6 +1,7 @@
 package com.cognizant.utilities;
 
 /**
+ * @hidden
  * This class is used to set some global variables in case user doesn't provide
  * some necessary variables. At that time these variables would be accepted as defaults.
  */
