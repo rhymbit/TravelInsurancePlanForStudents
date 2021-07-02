@@ -12,12 +12,14 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
-/**
- * This Class reads input for Car Insurance web page from Excel file.
- **/
+    /**
+     * This Class reads input for Car Insurance web page from Excel file.
+     **/
 public class ReadExcelCar {
 
-    //declaring required variables
+    /**
+     * Declaring variables and constructor- that sets filePath and sheetIndex
+     */
     private Path filePath;
     private XSSFWorkbook workbook = null;
     private int sheetIndex;
@@ -29,7 +31,9 @@ public class ReadExcelCar {
         readExcelFile();
         formatter = new DataFormatter();
     }
-    //fetching the excel file path
+    /**
+     * This method fetches the workbook from the Excel file path
+     */
     private void readExcelFile() {
         try (InputStream in = Files.newInputStream(filePath)) {
             workbook = new XSSFWorkbook(in);
@@ -37,7 +41,9 @@ public class ReadExcelCar {
             e.printStackTrace();
         }
     }
-    //closing the Excel workbook
+    /**
+     * This method closes the workbook
+     */
     public void closeWorkbook() {
         try {
             workbook.close();
@@ -45,13 +51,21 @@ public class ReadExcelCar {
             exp.printStackTrace();
         }
     }
-    //this method returns desired sheet based on sheet index
+    /**
+     * this method returns desired sheet based on sheet index
+     */
     private XSSFSheet getSheet() {
         XSSFSheet sheet = workbook.getSheetAt(sheetIndex);
         return sheet;
     }
 
-    //this methods reads Excel data in map
+    /**this methods reads Excel data in map
+     * creates nested hashmap Map<String, Map<String, String>> for fetching excel data
+     * iterate over header row and store values in ArrayList
+     * nested loop to iterate over each row and each cell
+     *
+     * @return Dictionary / Hashmap for the Excel Input values with their respective keys
+     */
     public Map<String, Map<String, String>> getExcelAsMap() {
         XSSFSheet sheet= getSheet();
         //creating nested hashmap for fetching excel data
@@ -81,7 +95,9 @@ public class ReadExcelCar {
         }
         return completeSheetData;
     }
-    //Fetching sheet 1 in the workbook, that is, TravelInsurance
+    /**
+     * this method returns map for the provided sheetIndex
+     */
     public Map<String,String> getCarInsuranceData(int sheetIndex) {
         this.sheetIndex = sheetIndex;
         Map<String,String> map =  getExcelAsMap().get("1");
