@@ -1,0 +1,135 @@
+[TestNG] Running:
+  C:\Users\prateek_parashar\code\Hackathon\StudentSubmission\testng.xml
+
+
+Suite Start Date: 07.02.2021.21.41.44.log
+
+Suite Start Date: 07.02.2021.21.41.44.log
+
+Suite Start Date: 07.02.2021.21.41.44.log
+Jul 02, 2021 9:41:44 PM org.openqa.selenium.remote.DesiredCapabilities edge
+INFO: Using `new EdgeOptions()` is preferred to `DesiredCapabilities.edge()`
+Jul 02, 2021 9:41:44 PM org.openqa.selenium.remote.DesiredCapabilities edge
+INFO: Using `new EdgeOptions()` is preferred to `DesiredCapabilities.edge()`
+Jul 02, 2021 9:41:44 PM org.openqa.selenium.remote.DesiredCapabilities edge
+INFO: Using `new EdgeOptions()` is preferred to `DesiredCapabilities.edge()`
+Starting MSEdgeDriver 91.0.864.53 (d30726a78632f38dc45e21dfe87527c2defd3481) on port 20461
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping MSEdgeDriver safe.
+MSEdgeDriver was started successfully.
+Starting MSEdgeDriver 91.0.864.53 (d30726a78632f38dc45e21dfe87527c2defd3481) on port 3611
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping MSEdgeDriver safe.
+MSEdgeDriver was started successfully.
+Starting MSEdgeDriver 91.0.864.53 (d30726a78632f38dc45e21dfe87527c2defd3481) on port 11743
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping MSEdgeDriver safe.
+MSEdgeDriver was started successfully.
+Jul 02, 2021 9:41:47 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Jul 02, 2021 9:41:47 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Jul 02, 2021 9:41:47 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Menu Items are: 
+Menu Items are: 
+***Result = PASSED***
+
+Fri Jul 02 21:41:53 IST 2021
+***Result = PASSED***
+
+Fri Jul 02 21:41:53 IST 2021
+Jul 02, 2021 9:41:55 PM org.openqa.selenium.remote.DesiredCapabilities firefox
+INFO: Using `new FirefoxOptions()` is preferred to `DesiredCapabilities.firefox()`
+Jul 02, 2021 9:41:55 PM org.openqa.selenium.remote.DesiredCapabilities edge
+INFO: Using `new EdgeOptions()` is preferred to `DesiredCapabilities.edge()`
+Starting MSEdgeDriver 91.0.864.53 (d30726a78632f38dc45e21dfe87527c2defd3481) on port 37712
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping MSEdgeDriver safe.
+MSEdgeDriver was started successfully.
+1625242315740	geckodriver	INFO	Listening on 127.0.0.1:9166
+1625242315770	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\PRATEE~1\\AppData\\Local\\Temp\\rust_mozprofile5Fd2bB"
+Jul 02, 2021 9:41:56 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+1625242317780	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\prateek_parashar\\AppData\\Local\\Temp\\rust_mozprofile5Fd2bB\\search.json.mozlz4", (void 0)))
+1625242323431	Marionette	INFO	Listening on port 57568
+1625242323560	Marionette	WARN	TLS certificate errors will be ignored for this session
+Jul 02, 2021 9:42:03 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+1625242328188	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+***Result = PASSED***
+
+Fri Jul 02 21:42:10 IST 2021
+Jul 02, 2021 9:42:13 PM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+Starting ChromeDriver 91.0.4472.19 (1bf021f248676a0b2ab3ee0561d83a59e424c23e-refs/branch-heads/4472@{#288}) on port 29891
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Jul 02, 2021 9:42:14 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+***Result = PASSED***
+
+Fri Jul 02 21:42:18 IST 2021
+***Result = PASSED***
+
+Fri Jul 02 21:42:19 IST 2021
+1625242339878	Marionette	INFO	Stopped listening on port 57568
+[Child 1596, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:544
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+Jul 02, 2021 9:42:21 PM org.openqa.selenium.remote.DesiredCapabilities firefox
+INFO: Using `new FirefoxOptions()` is preferred to `DesiredCapabilities.firefox()`
+1625242341550	geckodriver	INFO	Listening on 127.0.0.1:14750
+1625242341574	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\PRATEE~1\\AppData\\Local\\Temp\\rust_mozprofilecN07EA"
+1625242342470	Marionette	INFO	Marionette enabled
+Jul 02, 2021 9:42:23 PM org.openqa.selenium.remote.DesiredCapabilities edge
+INFO: Using `new EdgeOptions()` is preferred to `DesiredCapabilities.edge()`
+Starting MSEdgeDriver 91.0.864.53 (d30726a78632f38dc45e21dfe87527c2defd3481) on port 12205
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping MSEdgeDriver safe.
+MSEdgeDriver was started successfully.
+Jul 02, 2021 9:42:25 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\prateek_parashar\\AppData\\Local\\Temp\\rust_mozprofilecN07EA\\search.json.mozlz4", (void 0)))
+1625242348967	Marionette	INFO	Listening on port 60932
+1625242349414	Marionette	WARN	TLS certificate errors will be ignored for this session
+Jul 02, 2021 9:42:29 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+
+Total Passed = 8, Total Failed = 0, Total Skipped = 0
+
+***Result = PASSED***
+
+Fri Jul 02 21:42:29 IST 2021
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+Jul 02, 2021 9:42:37 PM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+Starting ChromeDriver 91.0.4472.19 (1bf021f248676a0b2ab3ee0561d83a59e424c23e-refs/branch-heads/4472@{#288}) on port 8859
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Jul 02, 2021 9:42:38 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+***Result = PASSED***
+
+Fri Jul 02 21:42:40 IST 2021
+Menu Items are: 
+***Result = PASSED***
+
+Fri Jul 02 21:42:41 IST 2021
+
+Total Passed = 8, Total Failed = 0, Total Skipped = 0
+
+1625242366777	Marionette	INFO	Stopped listening on port 60932
+
+Total Passed = 8, Total Failed = 0, Total Skipped = 1
+
+
+===============================================
+PolicyBazarTests
+Total tests run: 9, Failures: 0, Skips: 1
+===============================================
+
