@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- policybazar.com test suite -->
+<suite name="PolicyBazarTests" thread-count="4" parallel="tests">
+
+<!--    Google Chrome tests configurations-->
+    <test name="ChromeTest">
+        <parameter name="browser" value="chrome" />
+        <parameter name="platform" value="Windows 10" />
+        <parameter name="environment" value="local" />
+        <classes>
+            <class name="com.cognizant.tests.TestBase" />
+            <class name="com.cognizant.tests.CarInsuranceTest" />
+            <class name="com.cognizant.tests.TravelInsuranceTest" />
+            <class name="com.cognizant.tests.HealthInsuranceTest" />
+        </classes>
+    </test>
+
+<!--    Microsoft Edge Browser tests configurations-->
+    <test name="EdgeTest">
+        <parameter name="browser" value="edge" />
+        <parameter name="platform" value="Windows 10" />
+        <parameter name="environment" value="local" />
+        <classes>
+            <class name="com.cognizant.tests.TestBase" />
+            <class name="com.cognizant.tests.HealthInsuranceTest" />
+            <class name="com.cognizant.tests.CarInsuranceTest" />
+            <class name="com.cognizant.tests.TravelInsuranceTest" />
+        </classes>
+    </test>
+
+<!--    Firefox Browser Tests configurations-->
+    <test name="FirefoxTest">
+        <parameter name="browser" value="firefox" />
+        <parameter name="platform" value="Windows 10" />
+        <parameter name="environment" value="local" />
+        <classes>
+            <class name="com.cognizant.tests.TestBase" />
+            <class name="com.cognizant.tests.HealthInsuranceTest" />
+            <class name="com.cognizant.tests.CarInsuranceTest" />
+            <class name="com.cognizant.tests.TravelInsuranceTest" />
+        </classes>
+    </test>
+
+<!--    Listener class configurations-->
+    <listeners>
+        <listener class-name="com.cognizant.tests.listeners.TestListener" />
+    </listeners>
+</suite>

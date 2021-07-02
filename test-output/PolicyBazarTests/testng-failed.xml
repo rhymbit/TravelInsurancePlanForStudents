@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="4" parallel="tests" name="Failed suite [PolicyBazarTests]">
+  <parameter name="environment" value="local"/>
+  <parameter name="browser" value="firefox"/>
+  <parameter name="platform" value="Windows 10"/>
+  <listeners>
+    <listener class-name="com.cognizant.tests.listeners.TestListener"/>
+  </listeners>
+  <test parallel="tests" name="FirefoxTest(failed)">
+    <parameter name="environment" value="local"/>
+    <parameter name="browser" value="firefox"/>
+    <parameter name="platform" value="Windows 10"/>
+    <classes>
+      <class name="com.cognizant.tests.CarInsuranceTest">
+        <methods>
+          <include name="suiteTearDown"/>
+          <include name="suiteSetup"/>
+          <include name="suiteSetup"/>
+          <include name="suiteSetup"/>
+          <include name="testClassSetup"/>
+          <include name="testClassSetup"/>
+          <include name="testClassSetup"/>
+          <include name="testClassTearDown"/>
+          <include name="testClassTearDown"/>
+          <include name="testClassTearDown"/>
+        </methods>
+      </class> <!-- com.cognizant.tests.CarInsuranceTest -->
+      <class name="com.cognizant.tests.TravelInsuranceTest">
+        <methods>
+          <include name="suiteSetup"/>
+          <include name="suiteSetup"/>
+          <include name="suiteSetup"/>
+          <include name="testClassSetup"/>
+          <include name="testClassSetup"/>
+          <include name="testClassSetup"/>
+          <include name="testClassTearDown"/>
+          <include name="testClassTearDown"/>
+          <include name="testClassTearDown"/>
+          <include name="testSearchCountry"/>
+        </methods>
+      </class> <!-- com.cognizant.tests.TravelInsuranceTest -->
+      <class name="com.cognizant.tests.HealthInsuranceTest">
+        <methods>
+          <include name="suiteSetup"/>
+          <include name="suiteSetup"/>
+          <include name="suiteSetup"/>
+          <include name="testClassSetup"/>
+          <include name="testClassSetup"/>
+          <include name="testClassSetup"/>
+          <include name="testClassTearDown"/>
+          <include name="testClassTearDown"/>
+          <include name="testClassTearDown"/>
+        </methods>
+      </class> <!-- com.cognizant.tests.HealthInsuranceTest -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+</suite> <!-- Failed suite [PolicyBazarTests] -->
