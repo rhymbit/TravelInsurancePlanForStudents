@@ -12,9 +12,22 @@
     <parameter name="browser" value="firefox"/>
     <parameter name="platform" value="Windows 10"/>
     <classes>
-      <class name="com.cognizant.tests.TravelInsuranceTest">
+      <class name="com.cognizant.tests.CarInsuranceTest">
         <methods>
           <include name="suiteTearDown"/>
+          <include name="suiteSetup"/>
+          <include name="suiteSetup"/>
+          <include name="suiteSetup"/>
+          <include name="testClassSetup"/>
+          <include name="testClassSetup"/>
+          <include name="testClassSetup"/>
+          <include name="testClassTearDown"/>
+          <include name="testClassTearDown"/>
+          <include name="testClassTearDown"/>
+        </methods>
+      </class> <!-- com.cognizant.tests.CarInsuranceTest -->
+      <class name="com.cognizant.tests.TravelInsuranceTest">
+        <methods>
           <include name="suiteSetup"/>
           <include name="suiteSetup"/>
           <include name="suiteSetup"/>
@@ -40,19 +53,6 @@
           <include name="testClassTearDown"/>
         </methods>
       </class> <!-- com.cognizant.tests.HealthInsuranceTest -->
-      <class name="com.cognizant.tests.CarInsuranceTest">
-        <methods>
-          <include name="suiteSetup"/>
-          <include name="suiteSetup"/>
-          <include name="suiteSetup"/>
-          <include name="testClassSetup"/>
-          <include name="testClassSetup"/>
-          <include name="testClassSetup"/>
-          <include name="testClassTearDown"/>
-          <include name="testClassTearDown"/>
-          <include name="testClassTearDown"/>
-        </methods>
-      </class> <!-- com.cognizant.tests.CarInsuranceTest -->
     </classes>
   </test> <!-- FirefoxTest(failed) -->
 </suite> <!-- Failed suite [PolicyBazarTests] -->

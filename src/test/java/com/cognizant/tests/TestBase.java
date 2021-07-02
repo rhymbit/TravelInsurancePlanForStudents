@@ -23,8 +23,14 @@ public class TestBase {
     protected ReadExcel readExcel = null;
 
     /**
-     * This method runs at the start of test suite.
-     * This method creates the necessary configurations required to run the project.
+     * This method gets simulation parameters from {@code testng.xml} and passes
+     * them to {@link com.cognizant.utilities.DriverSetup} class, which returns a
+     * {@code WebDriver} object for automating browser.
+     * @param browser Browser name for which driver instance is set for. Currently supported
+     *                browsers {@code chrome}, {@code edge}, {@code firefox}.
+     * @param platform Operating system, on which automation would run.
+     * @param environment   Takes either of two values - {@code local} for running automation locally and
+     *                      {@code remote} for running instance using Selenium Grid.
      */
     @Parameters({"browser", "platform", "environment"})
     @BeforeClass
