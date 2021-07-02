@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
  */
 public class TravelInsurancePO {
     // Browser automating WebDriver object
-    public WebDriver driver = null;
+    public WebDriver driver;
 
     // WebElement locators for the travel insurance automation.
     public By searchCountryBy = By.xpath("//input[@id='myText']");

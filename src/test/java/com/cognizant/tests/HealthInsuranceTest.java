@@ -1,16 +1,13 @@
 package com.cognizant.tests;
 
-import com.cognizant.utilities.DriverSetup;
-import com.cognizant.utilities.Global_VARS;
-import com.cognizant.utilities.BrowserUtils;
 import com.cognizant.homepage.HomePagePO;
-import org.openqa.selenium.WebDriver;
+import com.cognizant.utilities.BrowserUtils;
+import com.cognizant.utilities.Global_VARS;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.*;
 
-import java.net.MalformedURLException;
 import java.util.List;
 
 /**
@@ -18,7 +15,7 @@ import java.util.List;
  * Health Insurance requirement for the project.
  */
 public class HealthInsuranceTest extends TestBase{
-    private WebDriver driver;
+//    private WebDriver driver;
 
     /**
      * Method to simulate health insurance tests on policybazaar.com
@@ -55,15 +52,6 @@ public class HealthInsuranceTest extends TestBase{
         Global_VARS.DEF_PLATFORM = System.getProperty("platform", platform);
         Global_VARS.DEF_ENVIRONMENT = System.getProperty("environment", environment);
 
-        try {
-            DriverSetup driverSetup = new DriverSetup();
-            driverSetup.setDriver(Global_VARS.DEF_BROWSER,
-                    Global_VARS.DEF_PLATFORM,
-                    Global_VARS.DEF_ENVIRONMENT);
-            driver = driverSetup.getDriver();
-        } catch (MalformedURLException e) {
-            Reporter.log("Selenium grid's Hub URL is not set properly, or is not working");
-        }
 
     }
     /**

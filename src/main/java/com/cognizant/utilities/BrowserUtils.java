@@ -56,7 +56,7 @@ public class BrowserUtils {
      */
     public static WebDriver gotoUrl(WebDriver driver, String url)
     {
-        driver.navigate().to(url);
+        driver.get(url);
         return driver;
     }
 

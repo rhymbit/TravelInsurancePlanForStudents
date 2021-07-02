@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="9" passed="8" failed="0" skipped="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Family Health Insurance]]>
+    </line>
+    <line>
+      <![CDATA[Senior Citizen Health Insurance]]>
+    </line>
+    <line>
+      <![CDATA[Family Health Insurance]]>
+    </line>
+    <line>
+      <![CDATA[Coronavirus Health Insurance]]>
+    </line>
+    <line>
+      <![CDATA[Senior Citizen Health Insurance]]>
+    </line>
+    <line>
+      <![CDATA[Corona Kavach Policy]]>
+    </line>
+    <line>
+      <![CDATA[Corona Rakshak Policy]]>
+    </line>
+    <line>
+      <![CDATA[Coronavirus Health Insurance]]>
+    </line>
+    <line>
+      <![CDATA[Arogya Sanjeevani Policy]]>
+    </line>
+    <line>
+      <![CDATA[Corona Kavach Policy]]>
+    </line>
+    <line>
+      <![CDATA[Critical Illness Insurance]]>
+    </line>
+    <line>
+      <![CDATA[Corona Rakshak Policy]]>
+    </line>
+    <line>
+      <![CDATA[Mediclaim Policy]]>
+    </line>
+    <line>
+      <![CDATA[Best Health Insurance Plans]]>
+    </line>
+    <line>
+      <![CDATA[Health Insurance Claim]]>
+    </line>
+    <line>
+      <![CDATA[Health Insurance Calculator]]>
+    </line>
+    <line>
+      <![CDATA[Arogya Sanjeevani Policy]]>
+    </line>
+    <line>
+      <![CDATA[Critical Illness Insurance]]>
+    </line>
+    <line>
+      <![CDATA[Mediclaim Policy]]>
+    </line>
+    <line>
+      <![CDATA[Best Health Insurance Plans]]>
+    </line>
+    <line>
+      <![CDATA[Health Insurance Claim]]>
+    </line>
+    <line>
+      <![CDATA[Health Insurance Calculator]]>
+    </line>
+    <line>
+      <![CDATA[Something went wrong with the web driver object when it was being closed.]]>
+    </line>
+    <line>
+      <![CDATA[Family Health Insurance]]>
+    </line>
+    <line>
+      <![CDATA[Senior Citizen Health Insurance]]>
+    </line>
+    <line>
+      <![CDATA[Coronavirus Health Insurance]]>
+    </line>
+    <line>
+      <![CDATA[Corona Kavach Policy]]>
+    </line>
+    <line>
+      <![CDATA[Corona Rakshak Policy]]>
+    </line>
+    <line>
+      <![CDATA[Arogya Sanjeevani Policy]]>
+    </line>
+    <line>
+      <![CDATA[Critical Illness Insurance]]>
+    </line>
+    <line>
+      <![CDATA[Mediclaim Policy]]>
+    </line>
+    <line>
+      <![CDATA[Best Health Insurance Plans]]>
+    </line>
+    <line>
+      <![CDATA[Health Insurance Claim]]>
+    </line>
+    <line>
+      <![CDATA[Health Insurance Calculator]]>
+    </line>
+    <line>
+      <![CDATA[WebDriver timeout. Failed to locate a web element.]]>
+    </line>
+    <line>
+      <![CDATA[Something went wrong with the web driver object when it was being closed.]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2021-07-02T12:59:49Z" name="PolicyBazarTests" finished-at="2021-07-02T13:01:04Z" duration-ms="74859">
+    <groups>
+    </groups>
+    <test started-at="2021-07-02T12:59:49Z" name="EdgeTest" finished-at="2021-07-02T13:01:00Z" duration-ms="70471">
+      <class name="com.cognizant.tests.CarInsuranceTest">
+        <test-method is-config="true" signature="suiteSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.CarInsuranceTest@548ad73b]" started-at="2021-07-02T18:30:06Z" name="suiteSetup" finished-at="2021-07-02T18:30:08Z" duration-ms="2359" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetup -->
+        <test-method is-config="true" signature="testClassSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.CarInsuranceTest@548ad73b]" started-at="2021-07-02T18:30:08Z" name="testClassSetup" finished-at="2021-07-02T18:30:08Z" duration-ms="71" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClassSetup -->
+        <test-method signature="testCarInsuranceCase()[pri:0, instance:com.cognizant.tests.CarInsuranceTest@548ad73b]" started-at="2021-07-02T18:30:08Z" name="testCarInsuranceCase" finished-at="2021-07-02T18:30:32Z" duration-ms="23645" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCarInsuranceCase -->
+        <test-method is-config="true" signature="testClassTearDown()[pri:0, instance:com.cognizant.tests.CarInsuranceTest@548ad73b]" started-at="2021-07-02T18:30:32Z" name="testClassTearDown" finished-at="2021-07-02T18:30:40Z" duration-ms="8641" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClassTearDown -->
+      </class> <!-- com.cognizant.tests.CarInsuranceTest -->
+      <class name="com.cognizant.tests.TravelInsuranceTest">
+        <test-method is-config="true" signature="suiteSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.TravelInsuranceTest@545997b1]" started-at="2021-07-02T18:30:40Z" name="suiteSetup" finished-at="2021-07-02T18:30:45Z" duration-ms="4214" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetup -->
+        <test-method is-config="true" signature="testClassSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.TravelInsuranceTest@545997b1]" started-at="2021-07-02T18:30:45Z" name="testClassSetup" finished-at="2021-07-02T18:30:45Z" duration-ms="45" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClassSetup -->
+        <test-method signature="testSearchCountry()[pri:0, instance:com.cognizant.tests.TravelInsuranceTest@545997b1]" started-at="2021-07-02T18:30:45Z" name="testSearchCountry" finished-at="2021-07-02T18:30:56Z" duration-ms="11853" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchCountry -->
+        <test-method is-config="true" signature="testClassTearDown()[pri:0, instance:com.cognizant.tests.TravelInsuranceTest@545997b1]" started-at="2021-07-02T18:30:56Z" name="testClassTearDown" finished-at="2021-07-02T18:31:00Z" duration-ms="3259" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClassTearDown -->
+      </class> <!-- com.cognizant.tests.TravelInsuranceTest -->
+      <class name="com.cognizant.tests.HealthInsuranceTest">
+        <test-method is-config="true" signature="suiteSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.HealthInsuranceTest@4cf4d528]" started-at="2021-07-02T18:29:49Z" name="suiteSetup" finished-at="2021-07-02T18:29:54Z" duration-ms="4607" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetup -->
+        <test-method is-config="true" signature="testClassSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.HealthInsuranceTest@4cf4d528]" started-at="2021-07-02T18:29:54Z" name="testClassSetup" finished-at="2021-07-02T18:29:54Z" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClassSetup -->
+        <test-method signature="HealthInsurance()[pri:0, instance:com.cognizant.tests.HealthInsuranceTest@4cf4d528]" started-at="2021-07-02T18:29:54Z" name="HealthInsurance" finished-at="2021-07-02T18:30:01Z" duration-ms="6832" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Family Health Insurance]]>
+            </line>
+            <line>
+              <![CDATA[Senior Citizen Health Insurance]]>
+            </line>
+            <line>
+              <![CDATA[Coronavirus Health Insurance]]>
+            </line>
+            <line>
+              <![CDATA[Corona Kavach Policy]]>
+            </line>
+            <line>
+              <![CDATA[Corona Rakshak Policy]]>
+            </line>
+            <line>
+              <![CDATA[Arogya Sanjeevani Policy]]>
+            </line>
+            <line>
+              <![CDATA[Critical Illness Insurance]]>
+            </line>
+            <line>
+              <![CDATA[Mediclaim Policy]]>
+            </line>
+            <line>
+              <![CDATA[Best Health Insurance Plans]]>
+            </line>
+            <line>
+              <![CDATA[Health Insurance Claim]]>
+            </line>
+            <line>
+              <![CDATA[Health Insurance Calculator]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- HealthInsurance -->
+        <test-method is-config="true" signature="testClassTearDown()[pri:0, instance:com.cognizant.tests.HealthInsuranceTest@4cf4d528]" started-at="2021-07-02T18:30:01Z" name="testClassTearDown" finished-at="2021-07-02T18:30:06Z" duration-ms="4818" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClassTearDown -->
+      </class> <!-- com.cognizant.tests.HealthInsuranceTest -->
+    </test> <!-- EdgeTest -->
+    <test started-at="2021-07-02T12:59:49Z" name="ChromeTest" finished-at="2021-07-02T13:01:00Z" duration-ms="70555">
+      <class name="com.cognizant.tests.CarInsuranceTest">
+        <test-method is-config="true" signature="suiteSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.CarInsuranceTest@7e0e6aa2]" started-at="2021-07-02T18:29:49Z" name="suiteSetup" finished-at="2021-07-02T18:29:54Z" duration-ms="4624" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetup -->
+        <test-method is-config="true" signature="testClassSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.CarInsuranceTest@7e0e6aa2]" started-at="2021-07-02T18:29:54Z" name="testClassSetup" finished-at="2021-07-02T18:29:57Z" duration-ms="2646" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClassSetup -->
+        <test-method signature="testCarInsuranceCase()[pri:0, instance:com.cognizant.tests.CarInsuranceTest@7e0e6aa2]" started-at="2021-07-02T18:29:57Z" name="testCarInsuranceCase" finished-at="2021-07-02T18:30:23Z" duration-ms="26256" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCarInsuranceCase -->
+        <test-method is-config="true" signature="testClassTearDown()[pri:0, instance:com.cognizant.tests.CarInsuranceTest@7e0e6aa2]" started-at="2021-07-02T18:30:23Z" name="testClassTearDown" finished-at="2021-07-02T18:30:26Z" duration-ms="3581" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClassTearDown -->
+      </class> <!-- com.cognizant.tests.CarInsuranceTest -->
+      <class name="com.cognizant.tests.TravelInsuranceTest">
+        <test-method is-config="true" signature="suiteSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.TravelInsuranceTest@553a3d88]" started-at="2021-07-02T18:30:26Z" name="suiteSetup" finished-at="2021-07-02T18:30:29Z" duration-ms="2452" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetup -->
+        <test-method is-config="true" signature="testClassSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.TravelInsuranceTest@553a3d88]" started-at="2021-07-02T18:30:29Z" name="testClassSetup" finished-at="2021-07-02T18:30:29Z" duration-ms="50" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClassSetup -->
+        <test-method signature="testSearchCountry()[pri:0, instance:com.cognizant.tests.TravelInsuranceTest@553a3d88]" started-at="2021-07-02T18:30:29Z" name="testSearchCountry" finished-at="2021-07-02T18:30:45Z" duration-ms="15979" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchCountry -->
+        <test-method is-config="true" signature="testClassTearDown()[pri:0, instance:com.cognizant.tests.TravelInsuranceTest@553a3d88]" started-at="2021-07-02T18:30:45Z" name="testClassTearDown" finished-at="2021-07-02T18:30:54Z" duration-ms="9053" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClassTearDown -->
+      </class> <!-- com.cognizant.tests.TravelInsuranceTest -->
+      <class name="com.cognizant.tests.HealthInsuranceTest">
+        <test-method is-config="true" signature="suiteSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.HealthInsuranceTest@a74868d]" started-at="2021-07-02T18:30:54Z" name="suiteSetup" finished-at="2021-07-02T18:30:55Z" duration-ms="1443" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetup -->
+        <test-method is-config="true" signature="testClassSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.HealthInsuranceTest@a74868d]" started-at="2021-07-02T18:30:55Z" name="testClassSetup" finished-at="2021-07-02T18:30:55Z" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClassSetup -->
+        <test-method signature="HealthInsurance()[pri:0, instance:com.cognizant.tests.HealthInsuranceTest@a74868d]" started-at="2021-07-02T18:30:55Z" name="HealthInsurance" finished-at="2021-07-02T18:30:59Z" duration-ms="3940" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Family Health Insurance]]>
+            </line>
+            <line>
+              <![CDATA[Senior Citizen Health Insurance]]>
+            </line>
+            <line>
+              <![CDATA[Coronavirus Health Insurance]]>
+            </line>
+            <line>
+              <![CDATA[Corona Kavach Policy]]>
+            </line>
+            <line>
+              <![CDATA[Corona Rakshak Policy]]>
+            </line>
+            <line>
+              <![CDATA[Arogya Sanjeevani Policy]]>
+            </line>
+            <line>
+              <![CDATA[Critical Illness Insurance]]>
+            </line>
+            <line>
+              <![CDATA[Mediclaim Policy]]>
+            </line>
+            <line>
+              <![CDATA[Best Health Insurance Plans]]>
+            </line>
+            <line>
+              <![CDATA[Health Insurance Claim]]>
+            </line>
+            <line>
+              <![CDATA[Health Insurance Calculator]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- HealthInsurance -->
+        <test-method is-config="true" signature="testClassTearDown()[pri:0, instance:com.cognizant.tests.HealthInsuranceTest@a74868d]" started-at="2021-07-02T18:30:59Z" name="testClassTearDown" finished-at="2021-07-02T18:31:00Z" duration-ms="399" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClassTearDown -->
+      </class> <!-- com.cognizant.tests.HealthInsuranceTest -->
+    </test> <!-- ChromeTest -->
+    <test started-at="2021-07-02T12:59:49Z" name="FirefoxTest" finished-at="2021-07-02T13:01:04Z" duration-ms="74784">
+      <class name="com.cognizant.tests.CarInsuranceTest">
+        <test-method is-config="true" signature="suiteSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.CarInsuranceTest@fcd6521]" started-at="2021-07-02T18:30:04Z" name="suiteSetup" finished-at="2021-07-02T18:30:11Z" duration-ms="7704" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetup -->
+        <test-method is-config="true" signature="testClassSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.CarInsuranceTest@fcd6521]" started-at="2021-07-02T18:30:11Z" name="testClassSetup" finished-at="2021-07-02T18:30:12Z" duration-ms="77" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClassSetup -->
+        <test-method signature="testCarInsuranceCase()[pri:0, instance:com.cognizant.tests.CarInsuranceTest@fcd6521]" started-at="2021-07-02T18:30:12Z" name="testCarInsuranceCase" finished-at="2021-07-02T18:30:32Z" duration-ms="20835" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCarInsuranceCase -->
+        <test-method is-config="true" signature="testClassTearDown()[pri:0, instance:com.cognizant.tests.CarInsuranceTest@fcd6521]" started-at="2021-07-02T18:30:32Z" name="testClassTearDown" finished-at="2021-07-02T18:30:34Z" duration-ms="2046" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Something went wrong with the web driver object when it was being closed.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testClassTearDown -->
+      </class> <!-- com.cognizant.tests.CarInsuranceTest -->
+      <class name="com.cognizant.tests.TravelInsuranceTest">
+        <test-method is-config="true" signature="suiteSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.TravelInsuranceTest@16f7c8c1]" started-at="2021-07-02T18:30:34Z" name="suiteSetup" finished-at="2021-07-02T18:30:41Z" duration-ms="6490" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetup -->
+        <test-method is-config="true" signature="testClassSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.TravelInsuranceTest@16f7c8c1]" started-at="2021-07-02T18:30:41Z" name="testClassSetup" finished-at="2021-07-02T18:30:41Z" duration-ms="73" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClassSetup -->
+        <test-method signature="testSearchCountry()[pri:0, instance:com.cognizant.tests.TravelInsuranceTest@16f7c8c1]" started-at="2021-07-02T18:30:41Z" name="testSearchCountry" finished-at="2021-07-02T18:31:02Z" duration-ms="21355" status="SKIP">
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[WebDriver timeout. Failed to locate a web element.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: WebDriver timeout. Failed to locate a web element.
+	at com.cognizant.tests.TravelInsuranceTest.testSearchCountry(TravelInsuranceTest.java:89)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+            <line>
+              <![CDATA[WebDriver timeout. Failed to locate a web element.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testSearchCountry -->
+        <test-method is-config="true" signature="testClassTearDown()[pri:0, instance:com.cognizant.tests.TravelInsuranceTest@16f7c8c1]" started-at="2021-07-02T18:31:02Z" name="testClassTearDown" finished-at="2021-07-02T18:31:04Z" duration-ms="1714" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Something went wrong with the web driver object when it was being closed.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testClassTearDown -->
+        <test-method is-config="true" signature="suiteTearDown()[pri:0, instance:com.cognizant.tests.TravelInsuranceTest@16f7c8c1]" started-at="2021-07-02T18:31:04Z" name="suiteTearDown" finished-at="2021-07-02T18:31:04Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteTearDown -->
+      </class> <!-- com.cognizant.tests.TravelInsuranceTest -->
+      <class name="com.cognizant.tests.HealthInsuranceTest">
+        <test-method is-config="true" signature="suiteSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.HealthInsuranceTest@2f0a87b3]" started-at="2021-07-02T18:29:49Z" name="suiteSetup" finished-at="2021-07-02T18:29:54Z" duration-ms="4620" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetup -->
+        <test-method is-config="true" signature="testClassSetup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.cognizant.tests.HealthInsuranceTest@2f0a87b3]" started-at="2021-07-02T18:29:54Z" name="testClassSetup" finished-at="2021-07-02T18:29:54Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClassSetup -->
+        <test-method signature="HealthInsurance()[pri:0, instance:com.cognizant.tests.HealthInsuranceTest@2f0a87b3]" started-at="2021-07-02T18:29:54Z" name="HealthInsurance" finished-at="2021-07-02T18:30:01Z" duration-ms="6642" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Family Health Insurance]]>
+            </line>
+            <line>
+              <![CDATA[Senior Citizen Health Insurance]]>
+            </line>
+            <line>
+              <![CDATA[Coronavirus Health Insurance]]>
+            </line>
+            <line>
+              <![CDATA[Corona Kavach Policy]]>
+            </line>
+            <line>
+              <![CDATA[Corona Rakshak Policy]]>
+            </line>
+            <line>
+              <![CDATA[Arogya Sanjeevani Policy]]>
+            </line>
+            <line>
+              <![CDATA[Critical Illness Insurance]]>
+            </line>
+            <line>
+              <![CDATA[Mediclaim Policy]]>
+            </line>
+            <line>
+              <![CDATA[Best Health Insurance Plans]]>
+            </line>
+            <line>
+              <![CDATA[Health Insurance Claim]]>
+            </line>
+            <line>
+              <![CDATA[Health Insurance Calculator]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- HealthInsurance -->
+        <test-method is-config="true" signature="testClassTearDown()[pri:0, instance:com.cognizant.tests.HealthInsuranceTest@2f0a87b3]" started-at="2021-07-02T18:30:01Z" name="testClassTearDown" finished-at="2021-07-02T18:30:04Z" duration-ms="3196" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClassTearDown -->
+      </class> <!-- com.cognizant.tests.HealthInsuranceTest -->
+    </test> <!-- FirefoxTest -->
+  </suite> <!-- PolicyBazarTests -->
+</testng-results>
